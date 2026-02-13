@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ruvon Chemicals - Home Page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Chatbot Trigger Button (Left Bottom) */
+        .chat-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #20685a;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(32, 104, 90, 0.35);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+            background-color: #faaa05;
+            color: #20685a;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(250, 168, 5, 0.934);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(250, 170, 5, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(250, 170, 5, 0);
+            }
+        }
+
+        /* Chat Window */
+        .chat-box {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 450px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: #20685a;
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .chat-header h5 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        /* Chat Body */
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f4f8f7;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Messages */
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            background: #ffffff;
+            color: #2f3e3a;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .user-message {
+            background: #20685a;
+            color: #ffffff;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        /* Quick Option Buttons */
+        .option-btn {
+            background: #ffffff;
+            border: 1px solid #20685a;
+            color: #20685a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            margin: 3px;
+            display: inline-block;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+
+        .option-btn:hover {
+            background: #faaa05;
+            color: #20685a;
+            border-color: #faaa05;
+        }
+
+        /* Chat Footer */
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #e6ecea;
+            background: #ffffff;
+            display: flex;
+            gap: 5px;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            border: 1px solid #d9e2df;
+            border-radius: 20px;
+            padding: 8px 15px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .chat-footer input:focus {
+            border-color: #20685a;
+        }
+
+        .chat-footer button {
+            background: #20685a;
+            color: #ffffff;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-footer button:hover {
+            background: #faaa05;
+            color: #20685a;
+        }
+
+        /* Chatbot Advanced Styles */
+.typing-indicator {
+    background-color: #f1f0f0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    display: none; /* Hidden by default */
+}
+.typing-dot {
+    height: 7px;
+    width: 7px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    animation: typing 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Floating Avatar */
+.chat-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+}
+
+        /* Product Card Styling (User's Existing CSS) */
+        .product-item {
+            transition: .5s;
+            box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+            border: 1px solid #eee;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 45px rgba(0, 0, 0, .15);
+            background: #fff !important;
+        }
+
+        .product-img {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            transition: .5s;
+        }
+
+        .product-item:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .service-feature-box {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .service-feature-box:hover {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        /* === Header Video Styles (Updated) === */
+        .header-video-section {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-video-section video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            /* This fixes the zooming/cropping issue */
+            object-position: center;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.50);
+            /* Slightly darker for better text contrast */
+            z-index: 2;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 3;
+            color: #f8f9fa;
+            /* Off-white / bright white for better visibility */
+            text-align: center;
+            padding: 0 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .carousel-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: #f8f9fa;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            /* Stronger shadow for readability */
+        }
+
+        .carousel-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 991px) {
+            .carousel-content h1 {
+                font-size: 3.2rem;
+            }
+
+            .carousel-content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .carousel-content h1 {
+                font-size: 2.6rem;
+            }
+
+            .header-video-section {
+                min-height: 80vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">Ruvon@international.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Ajwa Road, Vadodara-390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications &
+                                    Compliance</a>
+                                <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor
+                                    Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals &
+                                    Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling
+                                    Chemicals</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We
+                                Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel
+                                    Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- === Updated Header Video Section === -->
+    <section class="header-video-section wow fadeIn" data-wow-delay="0.1s">
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="img/RUVON-HERO.mp4" type="video/mp4">
+            <!-- Replace with your actual optimized video path -->
+            <!-- Recommended sources: pexels.com / pixabay.com search "chemical plant loop" or "industrial factory process" -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="carousel-content">
+            <h1 class="display-1 text-uppercase mb-3">CHEMICAL SOLUTIONS FOR A BETTER TOMORROW</h1>
+            <p class="fs-5 mb-5">We deliver high-quality chemicals globally, enabling safer manufacturing, sustainable
+                growth, and reliable industrial solutions.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a class="btn btn-primary py-3 px-5" href="#chemical-division">Explore Products</a>
+                <a class="btn btn-secondary py-3 px-5" href="Partner-with-us.html">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-11">
+                    <div class="h-100 py-5 d-flex align-items-center">
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h3 class="ms-5 mb-0">Together, we can build a world where everyone has the chance to thrive.
+                        </h3>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-1">
+                    <div class="h-100 w-100 bg-secondary d-flex align-items-center justify-content-center">
+                        <span class="text-white" style="transform: rotate(-90deg);">Scroll Down</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                            allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === All remaining sections are exactly the same as your original code === -->
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="about-img">
+                        <img class="img-fluid w-100" src="img/about.webp" alt="Image">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="section-title bg-white text-start text-primary pe-3">About Us</p>
+                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">Premier Supplier of Bulk
+                        Specialty Chemicals</h1>
+                    <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">Ruvon Chemicals supplies a wide range of industrial
+                        and specialty chemicals with a strong focus on
+                        quality, reliability, and international compliance. We connect manufacturers with certified
+                        suppliers
+                        worldwide, ensuring stable sourcing, competitive pricing, and efficient supply chain solutions.
+                    </p>
+                    <div class="row g-4 pt-2">
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                            <div class="h-100">
+                                <h3>Core Competencies</h3>
+                                <p>We specialize in sourcing, trading, and distributing essential chemical raw materials
+                                    to manufacturers worldwide, ensuring stable supply & standard.</p>
+                                <p class="text-dark"><i class="fa fa-check text-primary me-2"></i>Strong multi-sector
+                                    product portfolio.</p>
+                                <p class="text-dark"><i class="fa fa-check text-primary me-2"></i>logistics & global
+                                    vendor network.</p>
+                                <p class="text-dark mb-0"><i class="fa fa-check text-primary me-2"></i>End-to-end
+                                    material management </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 bg-primary p-4 text-center">
+                                <p class="fs-5 text-dark">Our focus is to supply reliable, high-grade chemicals that
+                                    strengthen industrial performance</p>
+                        
+                                <a href="https://wa.me/919773071752" class="btn btn-secondary py-2 px-4" target="_blank">
+    <i class="fab fa-whatsapp me-2"></i> Chat With Us
+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-title">
+                        <h1 class="display-6 mb-4">What We
+                            Deliver to
+                            Industries.</h1>
+                        <p class="fs-5 mb-0">We supply essential chemicals,
+                            global sourcing solutions, and
+                            reliable distribution for every
+                            industrial sector.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-8 col-xl-9">
+                    <div class="row g-5">
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fa fa-globe fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Global Sourcing</h3>
+                                <p class="mb-2">We source high-quality chemicals from certified international suppliers,
+                                    ensuring consistency and global standards.</p>
+                                <a href="Global-Sourcing-Procurement.html">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fa fa-industry fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Contract Manufacturing</h3>
+                                <p class="mb-2">We deliver essential raw materials required across manufacturing,
+                                    processing.</p>
+                                <a href="Contract-Manufacturing.html">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fa fa-clipboard-check fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Quality & Compliance</h3>
+                                <p class="mb-2">We follow strict quality checks, MSDS standards, and regulatory norms to
+                                    ensure safe and compliant products.</p>
+                                <a href="Quality-Assurance.html">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fa fa-truck fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Logistics & Distribution</h3>
+                                <p class="mb-2">We manage end-to-end transportation, warehousing, and documentation for
+                                    seamless, on-time deliveries.</p>
+                                <a href="Supply-chain-logistics.html">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fas fa-box fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Custom Packaging & Labeling</h3>
+                                <p class="mb-2">We offer customized packaging solutions to meet specific product and
+                                    client needs.</p>
+                                <a href="Custom-Packaging.html">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="service-item h-100">
+                                <div class="btn-square bg-light mb-4">
+                                    <i class="fa fa-handshake fa-2x text-secondary"></i>
+                                </div>
+                                <h3>Identifying & Channel Partnership</h3>
+                                <p class="mb-2">We identify strategic partners and build robust distribution channels to
+                                    accelerate your market expansion and drive sustainable business growth.</p>
+                                <a href="Indenting-Channel-Partnership.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="rounded overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="text-center bg-primary py-5 px-4 h-100">
+                                    <i class="fa fa-users fa-3x text-secondary mb-3"></i>
+                                    <h1 class="display-5 mb-0" data-toggle="counter-up">62</h1>
+                                    <span class="text-dark">Happy Clients</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="text-center bg-secondary py-5 px-4 h-100">
+                                    <i class="fa fa-award fa-3x text-primary mb-3"></i>
+                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">150</h1>
+                                    <span class="text-white">Premium Chemicals</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="text-center bg-secondary py-5 px-4 h-100">
+                                    <i class="fa fa-list-check fa-3x text-primary mb-3"></i>
+                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">7</h1>
+                                    <span class="text-white">Industries Served</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <div class="text-center bg-primary py-5 px-4 h-100">
+                                    <i class="fa fa-comments fa-3x text-secondary mb-3"></i>
+                                    <h1 class="display-5 mb-0" data-toggle="counter-up">100</h1>
+                                    <span class="text-dark">Quality Assured</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="section-title bg-white text-start text-primary pe-3">Why Choose Ruvon?</p>
+                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">Your Strategic Partner for Chemical
+                        Procurement</h1>
+                    <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">We bridge the gap between global chemical
+                        manufacturers and your factory floor. At Ruvon International, we don't just supply chemicals; we
+                        solve supply chain challenges. Whether you are a small enterprise or a large industry, we ensure
+                        you get the best global prices with zero compromise on purity.</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.4s"><i
+                            class="fa fa-check text-primary me-2"></i>Direct Import Pricing (No Middlemen)</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.5s"><i
+                            class="fa fa-check text-primary me-2"></i>COA Verified Quality (Lab Tested)</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
+                            class="fa fa-check text-primary me-2"></i>On-Time Delivery across India</p>
+                    <div class="d-flex mt-4 wow fadeIn" data-wow-delay="0.7s">
+                        <a class="btn btn-primary py-3 px-4 me-3"
+                            href="Brochure/Commercial Brochure Updated.pdf">Download Catalogue</a>
+                        <!-- <a class="btn btn-secondary py-3 px-4" href="#!">Contact Us</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn chemical-division" id="chemical-division" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="section-title bg-white text-center text-primary px-3">Industrial Solutions</p>
+                <h1 class="display-6 mb-5">Our Chemical Divisions</h1>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/inorganic-chemicals.webp"
+                                alt="Inorganic Chemicals" style="height: 200px; object-fit: cover;">
+                            <div
+                                class="bg-primary text-white position-absolute top-0 start-0 m-3 py-1 px-3 rounded-pill small">
+                                Top Seller</div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Inorganic Chemicals</h4>
+                            <p class="text-muted mb-4">High-purity acids, salts, and oxides for diverse industrial
+                                applications.</p>
+                            <a href="Inorganic-Chemicals.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/organic-chemicals.webp"
+                                alt="Organic Chemicals" style="height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Organic Chemicals</h4>
+                            <p class="text-muted mb-4">Intermediates sourced for pharmaceutical & plastic industries.
+                            </p>
+                            <a href="Organic-Chemicals.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/agro-chemicals.webp" alt="Agro-Chemicals"
+                                style="height: 200px; object-fit: cover;">
+                            <div
+                                class="bg-success text-white position-absolute top-0 start-0 m-3 py-1 px-3 rounded-pill small">
+                                Agricultural</div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Agro-Chemicals</h4>
+                            <p class="text-muted mb-4">Fertilizers, pesticides, and growth regulators for modern
+                                farming.</p>
+                            <a href="Agro-Chemicals.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/dyes-pigment.webp" alt="Dyes & Pigments"
+                                style="height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Dyes & Pigments</h4>
+                            <p class="text-muted mb-4">Vibrant and durable colorants for textiles, paints, and coatings.
+                            </p>
+                            <a href="Dyes-Pigments.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/Oleochemicals-castoroil.webp"
+                                alt="Oleochemicals" style="height: 200px; object-fit: cover;">
+                            <div
+                                class="bg-warning text-dark position-absolute top-0 start-0 m-3 py-1 px-3 rounded-pill small">
+                                Eco-Friendly</div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Oleochemicals & Castor Oil</h4>
+                            <p class="text-muted mb-4">Sustainable plant-based chemicals and castor oil derivatives.</p>
+                            <a href="Oleochemicals-Castoroil.html" class="btn btn-outline-primary px-3">View Products</a>
+                                                   </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/Petrochemicals-Industrial-Solvents.webp"
+                                alt="Petrochemicals" style="height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Petrochemicals & Solvents</h4>
+                            <p class="text-muted mb-4">Industrial solvents & hydrocarbons for manufacturing.</p>
+                            <a href="Petrochemicals-IndustrialSolvents.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/pharma-materials.webp"
+                                alt="Pharma Raw Materials" style="height: 200px; object-fit: cover;">
+                            <div
+                                class="bg-info text-white position-absolute top-0 start-0 m-3 py-1 px-3 rounded-pill small">
+                                GMP Grade</div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Pharma Excipients</h4>
+                            <p class="text-muted mb-4">Quality assured raw materials and excipients for formulations.
+                            </p>
+                            <a href="Pharmaceutical-Raw-Materials.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-item rounded bg-light overflow-hidden h-100">
+                        <div class="product-img position-relative">
+                            <img class="img-fluid w-100" src="img/SECTIONS/oil-gas-drilling-chemicals.webp"
+                                alt="Oil & Gas Chemicals" style="height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="mb-3">Oil & Gas Drilling Chemicals</h4>
+                            <p class="text-muted mb-4">Specialized drilling fluids and production chemicals.</p>
+                            <a href="Oil-GasDrilling-Chemicals.html" class="btn btn-outline-primary px-3">View Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid banner py-5">
+        <div class="container">
+            <div class="banner-inner bg-light p-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-10 text-center mb-5">
+                        <h1 class="display-6 wow fadeIn" data-wow-delay="0.3s">Seamless Global Sourcing & Supply Chain
+                            Solutions</h1>
+
+                        <p class="fs-5 mb-4 text-muted wow fadeIn" data-wow-delay="0.5s">
+                            Ruvon International simplifies the complexities of chemical trade. We ensure smooth
+                            execution from
+                            <strong>Purchase Order</strong> to <strong>Final Delivery</strong>, managing every detail of
+                            <strong>Incoterms (CIF, FOB)</strong> and regulatory compliance.
+                            <br>
+                            <span class="text-dark fw-bold mt-2 d-block">Available in Bulk Tankers & Customized Small
+                                Packaging.</span>
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 wow fadeIn" data-wow-delay="0.7s">
+                            <a class="btn btn-primary py-3 px-5 shadow-sm" href="Quote-Now.html">
+                                <i class="fa fa-file-invoice me-2"></i>Get a Quote
+                            </a>
+                            <a class="btn btn-secondary py-3 px-5 shadow-sm"
+                                href="Partner-with-us.html">
+                                <i class="fa fa-handshake me-2"></i>Partner With Us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 wow fadeIn" data-wow-delay="0.8s">
+                        <hr class="my-2 opacity-25">
+                    </div>
+                    <div class="row g-4 mt-2 justify-content-center wow fadeIn" data-wow-delay="0.9s">
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-feature-box p-4 text-center">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm"
+                                    style="width: 65px; height: 65px;">
+                                    <i class="fa fa-ship fa-lg text-primary"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Global Logistics</h5>
+                                <p class="mb-0 text-muted small">Efficient Sea, Air & Land transport management with
+                                    tracking.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-feature-box p-4 text-center">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm"
+                                    style="width: 65px; height: 65px;">
+                                    <i class="fa fa-file-contract fa-lg text-primary"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Documentation</h5>
+                                <p class="mb-0 text-muted small">Complete handling of COA, MSDS, Bill of Lading &
+                                    Customs.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-feature-box p-4 text-center">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm"
+                                    style="width: 65px; height: 65px;">
+                                    <i class="fa fa-box-open fa-lg text-primary"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Smart Packaging</h5>
+                                <p class="mb-0 text-muted small">Custom labeling and safe packaging for hazardous &
+                                    non-haz cargo.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="service-feature-box p-4 text-center">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm"
+                                    style="width: 65px; height: 65px;">
+                                    <i class="fa fa-balance-scale fa-lg text-primary"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2">Flexible Terms</h5>
+                                <p class="mb-0 text-muted small">Expert handling of CIF, FOB, EXW & DAP Incoterms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="section-title bg-white text-center text-primary px-3">Why Choose Us</p>
+                <h1 class="display-6 mb-4">The Ruvon Standard of Excellence</h1>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="event-item h-100 p-4 border border-light shadow-sm rounded">
+                        <div class="overflow-hidden mb-4 rounded">
+                            <img class="img-fluid w-100" src="img/event-1.webp" alt="Quality Testing"
+                                style="height: 250px; object-fit: cover;">
+                        </div>
+                        <a href="#!" class="h3 d-inline-block mb-3">Uncompromised Quality</a>
+                        <p class="text-muted">We ensure every shipment meets global purity standards with rigorous
+                            testing protocols before dispatch.</p>
+                        <div class="bg-light p-4 rounded mt-2">
+                            <p class="mb-2"><i class="fa fa-flask text-primary me-2"></i>COA & MSDS Provided</p>
+                            <p class="mb-2"><i class="fa fa-check-circle text-primary me-2"></i>Third-Party Inspection
+                            </p>
+                            <p class="mb-0"><i class="fa fa-certificate text-primary me-2"></i>ISO Certified Sources</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="event-item h-100 p-4 border border-light shadow-sm rounded">
+                        <div class="overflow-hidden mb-4 rounded">
+                            <img class="img-fluid w-100" src="img/event-2.webp" alt="Logistics"
+                                style="height: 250px; object-fit: cover;">
+                        </div>
+                        <a href="#!" class="h3 d-inline-block mb-3">Seamless Logistics</a>
+                        <p class="text-muted">End-to-end supply chain management ensuring timely & efficiently deliver via Sea, Air,
+                            and Road networks.</p>
+                        <div class="bg-light p-4 rounded mt-2">
+                            <p class="mb-2"><i class="fa fa-ship text-primary me-2"></i>FCL & LCL Shipments</p>
+                            <p class="mb-2"><i class="fa fa-box text-primary me-2"></i>Customized Packaging</p>
+                            <p class="mb-0"><i class="fa fa-map-marked-alt text-primary me-2"></i>Real-time Tracking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="event-item h-100 p-4 border border-light shadow-sm rounded">
+                        <div class="overflow-hidden mb-4 rounded">
+                            <img class="img-fluid w-100" src="img/event-3.webp" alt="Compliance"
+                                style="height: 250px; object-fit: cover;">
+                        </div>
+                        <a href="#!" class="h3 d-inline-block mb-3">Trade Compliance</a>
+                        <p class="text-muted">Navigating complex international trade laws so you don't have to. We
+                            handle all documentation & regulatory registrations.</p>
+                        <div class="bg-light p-4 rounded mt-2">
+                            <p class="mb-2"><i class="fa fa-file-contract text-primary me-2"></i>Export Documentation
+                            </p>
+                            <p class="mb-2"><i class="fa fa-globe text-primary me-2"></i>REACH Compliance</p>
+                            <p class="mb-0"><i class="fa fa-handshake text-primary me-2"></i>Flexible Incoterms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="section-title bg-white text-center text-primary px-3">Our Team</p>
+                <h1 class="display-6 mb-4">Meet Our Dedicated Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/TEAM/TIRTH.jpg" alt="">
+                            <h3>Tirth Bhavsar</h3>
+                            <span>Founder & CEO</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a> -->
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/TEAM/PRACHI.jpg" alt="">
+                            <h3>Prachi Parmar</h3>
+                            <span>Marketing Head</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a> -->
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/TEAM/AYUSH.jpg" alt="">
+                            <h3>Ayush Patel</h3>
+                            <span>Co-Founder & CMO</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-x-twitter"></i></a> -->
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Don't worry, we won't spam you with emails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="js/main.js"></script>
+<script>
+    /* =========================================
+       1. THE BRAIN: MASTER DATABASE (UPDATED)
+       ========================================= */
+    const siteDB = {
+        categories: [
+            { id: "inorganic", name: "Inorganic Chemicals", url: "Inorganic-Chemicals.html", keywords: ["caustic", "soda ash", "pac", "bleaching", "shmp", "alum"] },
+            { id: "organic", name: "Organic Chemicals", url: "Organic-Chemicals.html", keywords: ["ipa", "isopropyl", "ethyl", "acetate", "acetone", "acetic", "phenol"] },
+            { id: "agro", name: "Agro Chemicals & Fertilizers", url: "Agro-Chemicals.html", keywords: ["humate", "npk", "gibberellic", "zinc", "magnesium", "fertilizer", "urea"] },
+            { id: "dyes", name: "Dyes & Pigments", url: "Dyes-Pigments.html", keywords: ["reactive", "pigment", "dye", "color", "colour", "black b", "blue 15", "titanium", "tio2"] },
+            { id: "oleo", name: "Oleochemicals & Castor Oil", url: "Oleochemicals-Castoroil.html", keywords: ["castor", "stearic", "soap", "glycerine", "12-hsa", "labsa"] },
+            { id: "solvents", name: "Industrial Solvents", url: "Petrochemicals-IndustrialSolvents.html", keywords: ["xylene", "toluene", "benzene", "hexane", "mto", "glycol"] },
+            { id: "oilgas", name: "Oil & Gas Drilling Chemicals", url: "Oil-GasDrilling-Chemicals.html", keywords: ["xanthan", "barite", "phpa", "pac-r", "drilling", "calcium bromide"] }
+        ],
+        corporate: {
+            "profile": "<b>Ruvon International Pvt. Ltd.</b> is a premier Merchant Exporter & Importer based in Vadodara, Gujarat. We specialize in global chemical sourcing and supply chain solutions.",
+            "how_we_work": "We work as a <b>Strategic Bridge</b> between global manufacturers and local industries, ensuring technical alignment and smooth procurement.",
+            "vision": "<b>Our Vision:</b> To become a global leader in chemical trade by providing reliable, compliant, and high-quality raw materials.",
+            "logistics": "We offer <b>End-to-End Logistics</b> including sea freight, road transport, and multimodal solutions to ensure timely delivery.",
+            "packaging": "We provide <b>Custom Packaging</b> (25kg, 50kg, 1MT Jumbo Bags) and <b>Private Labeling</b> services to meet your brand requirements.",
+            "moq": "Our standard <b>MOQ</b> is 1 FCL for exports and 1-5 Tons for domestic supplies.",
+            "payment": "We accept <b>Letter of Credit (LC)</b>, <b>TT</b>, and standard bank transfers.",
+            "location": "Headquarters: A/6, Parimal Soc-2, Ajwa Road, <b>Vadodara, Gujarat, India (390019)</b>.",
+            "contact": "Sales: <b>+91 9773071752</b> | Email: <b>info@ruvonchemicals.com</b>"
+        }
+    };
+
+    const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3'); 
+    let firstOpen = true;
+
+    function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+            chatBox.style.display = 'flex';
+            if (firstOpen) { welcomeFlow(); firstOpen = false; }
+        } else { chatBox.style.display = 'none'; }
+    }
+
+    async function welcomeFlow() {
+        showTyping(); await sleep(800); hideTyping();
+        addBotMessage(getGreeting() + " Welcome to <b>Ruvon International</b>. 👋");
+        showTyping(); await sleep(600); hideTyping();
+        addBotMessage("Explore our chemicals or know more about our services:");
+        showOptions(['Find Chemicals', 'Get Quotation', 'Company Profile', 'Contact Sales']);
+    }
+
+    /* =========================================
+       2. INTELLIGENT LOGIC ENGINE
+       ========================================= */
+
+    function processUserMessage(msg) {
+        msg = msg.toLowerCase();
+        showTyping();
+
+        setTimeout(() => {
+            hideTyping();
+
+            // A. Check Category Keywords
+            const catMatch = siteDB.categories.find(c => msg.includes(c.id) || msg.includes(c.name.toLowerCase()));
+            if (catMatch) {
+                addBotMessage(`Explore our <b>${catMatch.name}</b> division here:`);
+                addBotMessage(`<a href="${catMatch.url}" class="btn btn-sm btn-primary text-black fw-bold mt-2">Open ${catMatch.name} Page</a>`);
+                return;
+            }
+
+            // B. Specific Corporate Q&A matching
+            if (msg.includes("vision") || msg.includes("mission")) { addBotMessage(siteDB.corporate.vision); return; }
+            if (msg.includes("work") || msg.includes("how you work")) { addBotMessage(siteDB.corporate.how_we_work); return; }
+            if (msg.includes("logistics") || msg.includes("delivery") || msg.includes("shipping")) { addBotMessage(siteDB.corporate.logistics); return; }
+            if (msg.includes("packing") || msg.includes("labeling") || msg.includes("label")) { addBotMessage(siteDB.corporate.packaging); return; }
+            if (msg.includes("moq") || msg.includes("quantity")) { addBotMessage(siteDB.corporate.moq); return; }
+            if (msg.includes("payment") || msg.includes("terms")) { addBotMessage(siteDB.corporate.payment); return; }
+            if (msg.includes("location") || msg.includes("where")) { addBotMessage(siteDB.corporate.location); return; }
+            if (msg.includes("contact") || msg.includes("number")) { addBotMessage(siteDB.corporate.contact); return; }
+
+            // C. Keyword Search for Specific Chemicals
+            let found = false;
+            siteDB.categories.forEach(cat => {
+                cat.keywords.forEach(key => {
+                    if (msg.includes(key)) {
+                        addBotMessage(`We supply <b>${key.toUpperCase()}</b> under ${cat.name}.`);
+                        addBotMessage(`<a href="${cat.url}" style="color:var(--primary); font-weight:bold;">Check Specifications</a>`);
+                        found = true;
+                    }
+                });
+            });
+            if (found) return;
+
+            // D. Quotation Match
+            if (msg.includes("quote") || msg.includes("price") || msg.includes("rate")) {
+                addBotMessage("Please fill our formal request form for spot pricing:");
+                addBotMessage("<a href='Quote-Now.html' class='btn btn-sm btn-dark w-100 mt-2'>Request Official Quote</a>");
+                return;
+            }
+
+            // E. Greetings
+            if (msg.match(/hi|hello|hey|morning|evening/)) {
+                addBotMessage("Hello! Ready to assist you. What can I do for you?");
+                showOptions(['Find Chemicals', 'Company Profile']);
+                return;
+            }
+
+            // Fallback
+            addBotMessage("I didn't quite get that. Can you please select an option?");
+            showOptions(['Find Chemicals', 'Company Profile', 'Contact Sales']);
+        }, 800);
+    }
+
+    /* =========================================
+       3. INTERACTIVE OPTION HANDLER
+       ========================================= */
+
+    function handleOptionClick(opt) {
+        addUserMessage(opt);
+        showTyping();
+        setTimeout(() => {
+            hideTyping();
+            
+            if (opt === 'Find Chemicals') {
+                addBotMessage("Select a business division:");
+                showOptions(['Inorganic', 'Organic', 'Agro Chemicals', 'Dyes & Pigments', 'Oleochemicals', 'Solvents', 'Oil & Gas']);
+            } 
+            else if (opt === 'Company Profile') {
+                addBotMessage(siteDB.corporate.profile);
+                addBotMessage("What would you like to know about our operations?");
+                showOptions(['Vision & Mission', 'How We Work', 'Logistics', 'Packaging']);
+            }
+            else if (opt === 'Vision & Mission') { addBotMessage(siteDB.corporate.vision); showOptions(['Logistics', 'Main Menu']); }
+            else if (opt === 'How We Work') { addBotMessage(siteDB.corporate.how_we_work); showOptions(['Packaging', 'Main Menu']); }
+            else if (opt === 'Logistics') { addBotMessage(siteDB.corporate.logistics); showOptions(['Company Profile', 'Main Menu']); }
+            else if (opt === 'Packaging') { addBotMessage(siteDB.corporate.packaging); showOptions(['Get Quotation', 'Main Menu']); }
+            else if (opt === 'Contact Sales') { addBotMessage(siteDB.corporate.contact); }
+            else if (opt === 'Get Quotation') { processUserMessage('quote'); }
+            else if (opt === 'Main Menu') { welcomeFlow(); }
+            else { processUserMessage(opt); }
+        }, 600);
+    }
+
+    /* =========================================
+       4. UI HELPERS
+       ========================================= */
+
+    function addBotMessage(text) {
+        const chatBody = document.getElementById('chatBody');
+        const div = document.createElement('div');
+        div.className = 'message bot-message';
+        div.innerHTML = text;
+        chatBody.appendChild(div);
+        msgSound.play().catch(e => {}); 
+        scrollToBottom();
+    }
+
+    function addUserMessage(text) {
+        const chatBody = document.getElementById('chatBody');
+        const div = document.createElement('div');
+        div.className = 'message user-message';
+        div.textContent = text;
+        chatBody.appendChild(div);
+        scrollToBottom();
+    }
+
+    function showOptions(options) {
+        const chatBody = document.getElementById('chatBody');
+        const div = document.createElement('div');
+        div.className = "mt-2 mb-3";
+        options.forEach(opt => {
+            const span = document.createElement('span');
+            span.className = 'option-btn';
+            span.textContent = opt;
+            span.onclick = () => handleOptionClick(opt);
+            div.appendChild(span);
+        });
+        chatBody.appendChild(div);
+        scrollToBottom();
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('userInput');
+        const val = input.value.trim();
+        if (val) { addUserMessage(val); processUserMessage(val); input.value = ""; }
+    }
+
+    function handleKeyPress(e) { if (e.key === "Enter") sendMessage(); }
+
+    function showTyping() {
+        if(document.getElementById('typingInd')) return;
+        const div = document.createElement('div');
+        div.id = 'typingInd'; div.className = 'typing-indicator'; div.style.display = 'block';
+        div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+        document.getElementById('chatBody').appendChild(div);
+        scrollToBottom();
+    }
+
+    function hideTyping() { const el = document.getElementById('typingInd'); if(el) el.remove(); }
+    function getGreeting() {
+        const h = new Date().getHours();
+        return h < 12 ? "Good Morning! ☀️" : h < 17 ? "Good Afternoon! 🌤️" : "Good Evening! 🌙";
+    }
+    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function scrollToBottom() { const b = document.getElementById('chatBody'); b.scrollTop = b.scrollHeight; }
+</script>
+</body>
+
+</html>

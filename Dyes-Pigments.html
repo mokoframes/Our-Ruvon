@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Products - Dyes & Pigments - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Product Card (E-commerce Style) */
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #20685a;
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #faaa05;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .product-img-container {
+            height: 220px;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-img-container img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #20685a;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .btn-cart-style {
+            background-color: #20685a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-cart-style:hover {
+            background-color: #175042;
+            color: #fff;
+        }
+
+        .btn-outline-style {
+            background-color: transparent;
+            color: #20685a;
+            border: 1px solid #20685a;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .btn-outline-style:hover {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Industry Icon Box */
+        .industry-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #f2f9f8;
+            color: #20685a;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid transparent;
+        }
+        .industry-pill:hover {
+            border-color: #faaa05;
+            background: #fff;
+        }
+
+        /* ----- NEW STYLE FOR SHADE BOX ----- */
+        .shade-box {
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.15); /* Light border for white/bright colors */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                    </a>
+                </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Dyes & Pigments</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dyes & Pigments</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="border-start border-5 ps-4 mb-4" style="border-color: #faaa05 !important;">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05;">Color Solutions</h6>
+                        <h1 class="display-5 mb-0" style="color: #20685a;">Spectrum of Vibrancy</h1>
+                    </div>
+                    <p class="fs-5 mb-4 text-muted">From vibrant textiles to durable automotive coatings, Dyes and Pigments bring the world to life. Ruvon International sources high-performance colorants known for their exceptional color fastness, stability, and eco-friendly profiles.</p>
+                    <p class="mb-4">We offer a comprehensive range of synthetic organic dyes and inorganic pigments sourced from India's premier chemical zones in Ankleshwar and Ahmedabad. Our portfolio caters to diverse industries including textiles, plastics, inks, and paints.</p>
+                    
+                    <div class="d-flex flex-wrap">
+                        <div class="industry-pill"><i class="fa fa-tshirt me-2"></i>Textiles</div>
+                        <div class="industry-pill"><i class="fa fa-paint-roller me-2"></i>Paints & Inks</div>
+                        <div class="industry-pill"><i class="fa fa-cube me-2"></i>Plastics</div>
+                        <div class="industry-pill"><i class="fa fa-shoe-prints me-2"></i>Leather</div>
+                        <div class="industry-pill"><i class="fa fa-scroll me-2"></i>Paper</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid rounded shadow w-100" src="img/SECTIONS/dyes-pigment.webp" alt="Dyes and Pigments Lab" style="object-fit: cover; min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="display-6" style="color: #20685a;">Featured Colorants</h3>
+                    <p class="text-muted">High-quality dyes and pigments for industrial application.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-card">
+                        <div class="product-badge">Textile</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/reactive-black-b.jpg" alt="Reactive Black B" onerror="this.src='img/product-1.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Black B</a>
+                            <p class="small text-muted mb-2">Reactive Black 5 (133%).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> Black 5</span>
+                                    <span><strong>Type:</strong> VS based</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Cotton Dyeing</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Black-B.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="product-card">
+                        <div class="product-badge">Pigment</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/pigment-blue-147-14-8.jpg" alt="Phthalo Blue" onerror="this.src='img/product-2.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Pigment Blue 15:3</a>
+                            <p class="small text-muted mb-2">Phthalocyanine Beta Blue.</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 147-14-8</span>
+                                    <span><strong>Light Fast:</strong> 8 (Excellent)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 10/25kg Bag</span>
+                                    <span><strong>Use:</strong> Ink/Plastic</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Pigment-Blue-15-3.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/Acid-Red-18.avif" alt="Acid Red 18" onerror="this.src='img/product-3.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Acid Red 18</a>
+                            <p class="small text-muted mb-2">Ponceau 4R (Brilliant Scarlet).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> 16255</span>
+                                    <span><strong>Solubility:</strong> Water</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Carton</span>
+                                    <span><strong>Use:</strong> Wool/Food</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Acid-Red-18.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/Pigment-Green-7.jpg" alt="Pigment Green 7" onerror="this.src='img/product-4.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Pigment Green 7</a>
+                            <p class="small text-muted mb-2">Phthalocyanine Green.</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 1328-53-6</span>
+                                    <span><strong>Heat Stability:</strong> 280°C</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Paint/Rubber</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Pigment-Green-7.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/direct-blue-86.jpg" alt="Direct Blue 86" onerror="this.src='img/product-5.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Direct Blue 86</a>
+                            <p class="small text-muted mb-2">Turquoise Blue GL.</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> 74180</span>
+                                    <span><strong>Affinity:</strong> Cellulose</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Box</span>
+                                    <span><strong>Use:</strong> Paper/Cotton</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Direct-Blue-86.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/solvent-yellow-14.png" alt="Solvent Yellow 14" onerror="this.src='img/product-6.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Solvent Yellow 14</a>
+                            <p class="small text-muted mb-2">Oil Orange E.</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> 12055</span>
+                                    <span><strong>Solubility:</strong> Oil/Wax</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Shoe Polish</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Solvent-Yellow-14.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/reactive-red-me4bl.jpeg" alt="Rhodamine B" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Red ME4BL</a>
+                            <p class="small text-muted mb-2">Reactive Red 195</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> 195</span>
+                                    <span><strong>Type:</strong> ME Series (HE)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum/Box</span>
+                                    <span><strong>Use:</strong> Cotton Exhaust</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Red-ME4BL.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/basic-violet-10.webp" alt="Basic Violet 10" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Basic Violet 10</a>
+                            <p class="small text-muted mb-2">Rhodamine B 540%.</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> 45170</span>
+                                    <span><strong>Color:</strong> Bright Pink</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Iron Drum</span>
+                                    <span><strong>Use:</strong> Paper/Textile</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Basic-Violet-10.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/reactive-turquoise-blue-g.png" alt="Rhodamine B" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Turq Blue G</a>
+                            <p class="small text-muted mb-2">Reactive Blue 21 (Turquoise)</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> Blue 21</span>
+                                    <span><strong>Affinity:</strong> High</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Cotton/Cellulose</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Turq-Blue-G.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/reactive-orange-3r.webp" alt="Reactive Orange 3R" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Orange 3R</a>
+                            <p class="small text-muted mb-2">Reactive Orange 16 (Bright Orange).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> Orange 16</span>
+                                    <span><strong>Type:</strong> VS Series</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum / Bag</span>
+                                    <span><strong>Use:</strong> Viscose Dyeing</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Orange-3R.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/titanium-dioxide-rutile-1.jpg" alt="Titanium Dioxide (Rutile)" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Titanium Dioxide (Rutile)</a>
+                            <p class="small text-muted mb-2">Pigment White 6 (High Opacity).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 13463-67-7</span>
+                                    <span><strong>Form:</strong> White Powder</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Paper Bag</span>
+                                    <span><strong>Use:</strong> Paint, Plastic</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Titanium-Dioxide-Rutile.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/carbon-black.jpg" alt="Carbon Black" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Carbon Black</a>
+                            <p class="small text-muted mb-2">Pigment Black 7 (High Jetness).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 1333-86-4</span>
+                                    <span><strong>Heat Stability:</strong> >300°C</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 10kg/20kg Bag</span>
+                                    <span><strong>Use:</strong> Rubber, Ink</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Carbon-Black.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/Quinacridone-Pink.avif" alt="Rhodamine B" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Quinacridone Pink</a>
+                            <p class="small text-muted mb-2">Pigment Red 122 (High Performance).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 980-26-7</span>
+                                    <span><strong>Light Fast:</strong> 8 (Excellent)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 10/25kg Drum</span>
+                                    <span><strong>Use:</strong> Premium Coatings</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Quinacridone-Pink.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/Reactive-Yellow-MERL.jpg" alt="Reactive Yellow MERL" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Yellow MERL</a>
+                            <p class="small text-muted mb-2">Reactive Yellow 145 (Golden Yellow).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> Yellow 145</span>
+                                    <span><strong>Solubility:</strong> >100 g/l</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Cotton Dyeing</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Yellow-MERL.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/Reactive-Blue-ME2RL.jpg" alt="Reactive Blue ME2RL" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Reactive Blue ME2RL</a>
+                            <p class="small text-muted mb-2">Reactive Blue 194 (Navy Tone).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CI No:</strong> Blue 194</span>
+                                    <span><strong>Temp:</strong> 60°C</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Drum</span>
+                                    <span><strong>Use:</strong> Dark Navy Shades</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Reactive-Blue-ME2RL.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Dyes-Pigments/rubine-toner.jpg" alt="Rubine Toner" onerror="this.src='img/product-8.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Rubine Toner</a>
+                            <p class="small text-muted mb-2">Pigment Red 57:1 (Lithol Rubine).</p>
+                            
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 5281-04-9</span>
+                                    <span><strong>Heat Stability:</strong> 240°C</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 10kg / 25kg Bag</span>
+                                    <span><strong>Use:</strong> Printing Inks</span>
+                                </div>
+                            </div>
+
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="Rubine-Toner.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5 border">
+                        <h3 class="mb-4" style="color: #20685a;">Full Dyes Inventory</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover bg-white align-middle">
+                                <thead class="text-white" style="background-color: #20685a;">
+                                    <tr>
+                                        <th scope="col" class="py-3">Product Name</th>
+                                        <th scope="col" class="py-3">C.I. Name</th>
+                                        <th scope="col" class="py-3">Application</th>
+                                        <th scope="col" class="py-3 text-center">Shade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 145</td>
+                                        <td>Yellow MERL</td>
+                                        <td>Cotton Dyeing (HE)</td>
+                                        <td><div class="shade-box" style="background-color: #FFB300;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 160</td>
+                                        <td>Yellow ME4GL</td>
+                                        <td>Cotton, Viscose Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #FFF200;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 186</td>
+                                        <td>Yellow ME3RL</td>
+                                        <td>Cotton Knitwear</td>
+                                        <td><div class="shade-box" style="background-color: #FFD700;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 195</td>
+                                        <td>Red ME4BL</td>
+                                        <td>Cotton Dyeing (Hot Brand)</td>
+                                        <td><div class="shade-box" style="background-color: #D9004C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 223</td>
+                                        <td>Red ME3BL</td>
+                                        <td>Cotton, Towel Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #FF2400;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 250</td>
+                                        <td>Red ME6BL</td>
+                                        <td>Deep Shades Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #8B0000;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 198</td>
+                                        <td>Red RB</td>
+                                        <td>Cotton Fiber Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #DC143C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 194</td>
+                                        <td>Blue ME2RL</td>
+                                        <td>Cotton Exhaust (Navy)</td>
+                                        <td><div class="shade-box" style="background-color: #000080;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 222</td>
+                                        <td>Blue MEBR</td>
+                                        <td>High Exhaust Cotton</td>
+                                        <td><div class="shade-box" style="background-color: #4169E1;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Orange 122</td>
+                                        <td>Orange ME2RL</td>
+                                        <td>Cotton Dyeing (Hot Brand)</td>
+                                        <td><div class="shade-box" style="background-color: #FF8C00;"></div></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="fw-bold">Reactive Black 5</td>
+                                        <td>Reactive Black B</td>
+                                        <td>Cotton Dyeing & Printing</td>
+                                        <td><div class="shade-box" style="background-color: #000000;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Mix Black</td>
+                                        <td>Black WNN</td>
+                                        <td>Cotton Fabric Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #1A1A1A;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Black 31</td>
+                                        <td>Black RL</td>
+                                        <td>Grey Shades Cotton</td>
+                                        <td><div class="shade-box" style="background-color: #696969;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 21</td>
+                                        <td>Turq Blue G</td>
+                                        <td>Cotton Printing & Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #00C4CC;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 19</td>
+                                        <td>Blue MR</td>
+                                        <td>Textile Printing</td>
+                                        <td><div class="shade-box" style="background-color: #1E90FF;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 13</td>
+                                        <td>Blue 5R</td>
+                                        <td>Viscose & Cotton</td>
+                                        <td><div class="shade-box" style="background-color: #0000CD;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Blue 28</td>
+                                        <td>Blue 3R</td>
+                                        <td>Cotton Yarn Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #00008B;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 35</td>
+                                        <td>Red 5B</td>
+                                        <td>Cotton & Rayon Print</td>
+                                        <td><div class="shade-box" style="background-color: #FF00FF;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 106</td>
+                                        <td>Red C2G</td>
+                                        <td>Cold Pad Batch Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #CD5C5C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Red 180</td>
+                                        <td>Maroon V</td>
+                                        <td>Deep Shades Cotton</td>
+                                        <td><div class="shade-box" style="background-color: #800000;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 42</td>
+                                        <td>Yellow FG</td>
+                                        <td>Cotton Printing</td>
+                                        <td><div class="shade-box" style="background-color: #F0E68C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 77</td>
+                                        <td>Yellow R</td>
+                                        <td>Cost-Effective Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #FFD700;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Orange 16</td>
+                                        <td>Orange 3R</td>
+                                        <td>Cotton Dyeing & Printing</td>
+                                        <td><div class="shade-box" style="background-color: #FF4500;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Yellow 15</td>
+                                        <td>Yellow GR</td>
+                                        <td>Discharge Printing</td>
+                                        <td><div class="shade-box" style="background-color: #FFD700;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Reactive Violet 1</td>
+                                        <td>Purple H5R</td>
+                                        <td>Cotton & Viscose</td>
+                                        <td><div class="shade-box" style="background-color: #8A2BE2;"></div></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="fw-bold">Direct Black 22</td>
+                                        <td>Direct Black VSF</td>
+                                        <td>Kraft Paper & Box</td>
+                                        <td><div class="shade-box" style="background-color: #000000;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Black 80</td>
+                                        <td>Direct Black 80</td>
+                                        <td>Cotton Blends</td>
+                                        <td><div class="shade-box" style="background-color: #1C1C1C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Yellow 11</td>
+                                        <td>Direct Yellow 11</td>
+                                        <td>Paper Pulp Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #FFD700;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Yellow 12</td>
+                                        <td>Chrysophenine G</td>
+                                        <td>Paper & Cotton</td>
+                                        <td><div class="shade-box" style="background-color: #FFFF00;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Red 81</td>
+                                        <td>Direct Red 81</td>
+                                        <td>File Covers & Tissue</td>
+                                        <td><div class="shade-box" style="background-color: #FF69B4;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Blue 86</td>
+                                        <td>Turq Blue GL</td>
+                                        <td>Paper Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #00CED1;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Direct Orange 26</td>
+                                        <td>Direct Orange 26</td>
+                                        <td>Paper Board</td>
+                                        <td><div class="shade-box" style="background-color: #FF8C00;"></div></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="fw-bold">Disperse Blue 56</td>
+                                        <td>Blue 2BLN</td>
+                                        <td>Polyester Fabric</td>
+                                        <td><div class="shade-box" style="background-color: #1E90FF;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Disperse Red 60</td>
+                                        <td>Red FB</td>
+                                        <td>Polyester Fabric</td>
+                                        <td><div class="shade-box" style="background-color: #DC143C;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Disperse Yellow 64</td>
+                                        <td>Yellow 3GL</td>
+                                        <td>Polyester Yarn</td>
+                                        <td><div class="shade-box" style="background-color: #FFFF00;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Disperse Mix Black</td>
+                                        <td>Black EXN</td>
+                                        <td>Polyester Suiting</td>
+                                        <td><div class="shade-box" style="background-color: #000000;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Disperse Mix Navy</td>
+                                        <td>Navy 2T</td>
+                                        <td>Polyester Fabric</td>
+                                        <td><div class="shade-box" style="background-color: #000080;"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Vat Blue 1</td>
+                                        <td>Indigo Blue</td>
+                                        <td>Denim Dyeing</td>
+                                        <td><div class="shade-box" style="background-color: #4B0082;"></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="contact.html" class="btn btn-primary py-3 px-5">Download Shade Card <i class="fa fa-download ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5 border">
+                        <h3 class="mb-4" style="color: #20685a;">Full Pigments Inventory</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover bg-white align-middle">
+                                <thead class="text-white" style="background-color: #20685a;">
+                                    <tr>
+                                        <th scope="col" class="py-3">Product Name</th>
+                                        <th scope="col" class="py-3">C.I. Name</th>
+                                        <th scope="col" class="py-3">Application</th>
+                                        <th scope="col" class="py-3 text-center">Shade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="fw-bold">Pigment White 6</td><td>Titanium Dioxide Rutile</td><td>Paints, Plastics, Paper</td><td><div class="shade-box" style="background-color: #FFFFFF;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 15:3</td><td>Phthalo Blue Beta</td><td>Printing Inks, Plastics</td><td><div class="shade-box" style="background-color: #00B7EB;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Green 7</td><td>Phthalo Green 7</td><td>Paints, Plastics, Masterbatch</td><td><div class="shade-box" style="background-color: #009E60;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Black 7</td><td>Carbon Black</td><td>Rubber, Tyres, Inks</td><td><div class="shade-box" style="background-color: #000000;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 57:1</td><td>Rubine Toner</td><td>Offset Inks, Masterbatch</td><td><div class="shade-box" style="background-color: #C71585;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 101</td><td>Red Oxide</td><td>Construction, Primer, Pavers</td><td><div class="shade-box" style="background-color: #B22222;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 34</td><td>Chrome Yellow Lemon</td><td>Industrial Paints, Road Marking</td><td><div class="shade-box" style="background-color: #FFF700;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 12</td><td>Permanent Yellow G</td><td>Rubber, Plastics, Inks</td><td><div class="shade-box" style="background-color: #FFFF00;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 122</td><td>Quinacridone Pink</td><td>Premium Inks, Auto Paint</td><td><div class="shade-box" style="background-color: #E75480;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Violet 23</td><td>Carbazole Violet 23</td><td>Plastics, Inks, Detergents</td><td><div class="shade-box" style="background-color: #4B0082;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 15:0</td><td>Phthalo Blue Alpha</td><td>Plastics, Rubber, Paint</td><td><div class="shade-box" style="background-color: #0047AB;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 15:1</td><td>Phthalo Blue Alpha (Stable)</td><td>Plastics (Non-Crystallizing)</td><td><div class="shade-box" style="background-color: #0000CD;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 15:4</td><td>Phthalo Blue Beta (Conc)</td><td>Liquid Inks, Solvent Paints</td><td><div class="shade-box" style="background-color: #0000FF;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Green 36</td><td>Phthalo Green 36</td><td>High Quality Coatings, Inks</td><td><div class="shade-box" style="background-color: #32CD32;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 2</td><td>Permanent Red F4R</td><td>Air Drying Paints, Inks</td><td><div class="shade-box" style="background-color: #FF0000;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 3</td><td>Toluidine Red</td><td>Enamel Paints, Industrial</td><td><div class="shade-box" style="background-color: #DC143C;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 53:1</td><td>Red Lake C</td><td>Printing Inks, Plastics</td><td><div class="shade-box" style="background-color: #FF4500;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 48:2</td><td>Red 2B Toner</td><td>Plastics (PVC), Inks</td><td><div class="shade-box" style="background-color: #B22222;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 170</td><td>Red 170</td><td>Industrial & Auto Paint</td><td><div class="shade-box" style="background-color: #CD5C5C;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 254</td><td>DPP Red 254</td><td>High End Auto Paint</td><td><div class="shade-box" style="background-color: #FF0000;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 3</td><td>Permanent Yellow 10G</td><td>Emulsion Paints (Water Base)</td><td><div class="shade-box" style="background-color: #FFFACD;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 13</td><td>Pigment Yellow 13</td><td>Offset Inks, Rubber</td><td><div class="shade-box" style="background-color: #FFD700;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 14</td><td>Pigment Yellow 14</td><td>Stationery, Rubber, PVC</td><td><div class="shade-box" style="background-color: #FFD700;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 83</td><td>Yellow 83 (HR)</td><td>Plastics, Industrial Paints</td><td><div class="shade-box" style="background-color: #FFA500;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Orange 13</td><td>Pigment Orange 13</td><td>Rubber, Printing Inks</td><td><div class="shade-box" style="background-color: #FFA500;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Orange 34</td><td>Pigment Orange 34</td><td>Plastics, Textile Printing</td><td><div class="shade-box" style="background-color: #FF8C00;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment White 6</td><td>Titanium Dioxide (Anatase)</td><td>Paper, Soap, Rubber</td><td><div class="shade-box" style="background-color: #FFFFFF;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 34</td><td>Chrome Yellow Middle</td><td>Industrial Paints, Coatings</td><td><div class="shade-box" style="background-color: #FFD700;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Red 104</td><td>Molybdate Orange</td><td>Industrial Paints, Plastics</td><td><div class="shade-box" style="background-color: #FF4500;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Yellow 42</td><td>Yellow Oxide</td><td>Wall Putty, Flooring, Paint</td><td><div class="shade-box" style="background-color: #CC7722;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Black 11</td><td>Black Oxide</td><td>Cement, Concrete, Slurry</td><td><div class="shade-box" style="background-color: #000000;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 29</td><td>Ultramarine Blue</td><td>Laundry (Neel), Plastics</td><td><div class="shade-box" style="background-color: #4169E1;"></div></td></tr>
+                                    <tr><td class="fw-bold">Pigment Blue 27</td><td>Prussian Blue</td><td>Paints, Inks, Crayons</td><td><div class="shade-box" style="background-color: #003153;"></div></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="contact.html" class="btn btn-primary py-3 px-5">Download Pigment Chart <i class="fa fa-download ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe for Market Updates</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Get weekly price trends for Dyes & Pigments directly in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

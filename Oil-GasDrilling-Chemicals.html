@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Products - Oil & Gas Drilling Chemicals - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Product Card (E-commerce Style) */
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #20685a;
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #faaa05;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .product-img-container {
+            height: 220px;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-img-container img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #20685a;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .btn-cart-style {
+            background-color: #20685a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-cart-style:hover {
+            background-color: #175042;
+            color: #fff;
+        }
+
+        .btn-outline-style {
+            background-color: transparent;
+            color: #20685a;
+            border: 1px solid #20685a;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .btn-outline-style:hover {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Industry Icon Box */
+        .industry-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #f2f9f8;
+            color: #20685a;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid transparent;
+        }
+        .industry-pill:hover {
+            border-color: #faaa05;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                    </a>
+                </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Oil & Gas Drilling Chemicals</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Drilling Fluids</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="border-start border-5 ps-4 mb-4" style="border-color: #faaa05 !important;">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05;">Upstream Solutions</h6>
+                        <h1 class="display-5 mb-0" style="color: #20685a;">Optimizing Well Performance</h1>
+                    </div>
+                    <p class="fs-5 mb-4 text-muted">Ruvon International supplies high-performance drilling fluid additives and completion chemicals designed for the demanding environments of oil and gas exploration. We understand that wellbore stability and efficient drilling are non-negotiable.</p>
+                    <p class="mb-4">Our portfolio includes viscosifiers, weighting agents, biocides, and shale stabilizers that meet API (American Petroleum Institute) standards. We cater to both onshore and offshore drilling operations, ensuring cost-effective and timely delivery.</p>
+                    
+                    <div class="d-flex flex-wrap">
+                        <div class="industry-pill"><i class="fa fa-water me-2"></i>Drilling Muds</div>
+                        <div class="industry-pill"><i class="fa fa-layer-group me-2"></i>Shale Inhibition</div>
+                        <div class="industry-pill"><i class="fa fa-weight-hanging me-2"></i>Weighting Agents</div>
+                        <div class="industry-pill"><i class="fa fa-tint me-2"></i>Fluid Loss Control</div>
+                        <div class="industry-pill"><i class="fa fa-biohazard me-2"></i>Biocides</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid rounded shadow w-100" src="img/SECTIONS/oil-gas-drilling-chemicals.webp" alt="Offshore Rig" style="object-fit: cover; min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="display-6" style="color: #20685a;">Featured Drilling Additives</h3>
+                    <p class="text-muted">API Grade chemicals for maximum efficiency & production.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-card">
+                        <div class="product-badge">API 13A</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/701-xanthan_gum.webp" alt="Xanthan Gum" onerror="this.src='img/product-1.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Xanthan Gum</a>
+                            <p class="small text-muted mb-2">Primary Viscosifier (Oil Grade).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 11138-66-2</span>
+                                    <span><strong>Rheology:</strong> High Yield</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Thickener</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="701-Xanthan-Gum.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="product-card">
+                        <div class="product-badge">4.2 SG</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/702-Barite-Powder.jpg" alt="Barite Powder" onerror="this.src='img/product-2.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Barite Powder</a>
+                            <p class="small text-muted mb-2">Weighting Agent (API Grade).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Density:</strong> 4.1/4.2 SG</span>
+                                    <span><strong>Mesh:</strong> 200</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 1.5MT Jumbo</span>
+                                    <span><strong>Use:</strong> Pressure Control</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="702-Barite-Powder.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-card">
+                        <div class="product-badge">Eco-Friendly</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/703-Potassium-Formate.jpg" alt="Potassium Formate" onerror="this.src='img/product-3.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Potassium Formate</a>
+                            <p class="small text-muted mb-2">Drilling Mud Additive (Solid/Liq).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 590-29-4</span>
+                                    <span><strong>Purity:</strong> 97% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Shale Shaker</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="703-Potassium-Formate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="product-card">
+                        <div class="product-badge">High Value</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/704-Calcium-Bromide.jpg" alt="Calcium Bromide" onerror="this.src='img/product-4.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Calcium Bromide</a>
+                            <p class="small text-muted mb-2">Completion Fluid (Liquid/Powder).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7789-41-5</span>
+                                    <span><strong>Density:</strong> 1.70 SG (Liq)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 340kg Drum</span>
+                                    <span><strong>Use:</strong> Brine/Packer</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="704-Calcium-Bromide.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/705-PHPA-Polymer.avif" alt="PHPA" onerror="this.src='img/product-5.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">PHPA Polymer</a>
+                            <p class="small text-muted mb-2">Shale Stabilizer & Encapsulator.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Form:</strong> White Powder</span>
+                                    <span><strong>MW:</strong> High</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Encapsulation</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="705-PHPA-Polymer.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/706-Potassium-Chloride.jpg" alt="KCL" onerror="this.src='img/product-6.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Potassium Chloride (KCL)</a>
+                            <p class="small text-muted mb-2">98% Min Shale Inhibitor.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7447-40-7</span>
+                                    <span><strong>Form:</strong> Powder</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 50kg Bag</span>
+                                    <span><strong>Use:</strong> Mud Stabilizer</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="706-Potassium-Chloride.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/707-Polyanionic-Cellulose.png" alt="PAC R" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Polyanionic Cellulose (PAC)</a>
+                            <p class="small text-muted mb-2">Fluid Loss Reducer (R/LV Grade).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Type:</strong> Regular/Low Vis</span>
+                                    <span><strong>API:</strong> 13A Compliant</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Filtration</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="707-Polyanionic-Cellulose.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/708-glutaraldehyde.webp" alt="Biocide" onerror="this.src='img/product-8.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Glutaraldehyde 50%</a>
+                            <p class="small text-muted mb-2">Oilfield Biocide.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 111-30-8</span>
+                                    <span><strong>Action:</strong> Bactericide</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 220kg Drum</span>
+                                    <span><strong>Use:</strong> Water Treat</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="708-Glutaraldehyde-50%.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-card">
+                        <div class="product-badge">Biocide</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/709-Benzalkonium-Chloride.webp" alt="BKC" onerror="this.src='img/product-9.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Benzalkonium Chloride</a>
+                            <p class="small text-muted mb-2">BKC 50% / 80% (Corrosion Inhibitor).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 8001-54-5</span>
+                                    <span><strong>Type:</strong> Cationic</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 200kg Drum</span>
+                                    <span><strong>Use:</strong> Algaecide</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="709-Benzalkonium-Chloride.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/710-Sodium-Nitrite.jpg" alt="Sodium Nitrite" onerror="this.src='img/product-10.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Sodium Nitrite</a>
+                            <p class="small text-muted mb-2">Technical Grade (Corrosion Inhibitor).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7632-00-0</span>
+                                    <span><strong>Purity:</strong> 99% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Pipe Protection</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="710-Sodium-Nitrite.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-card">
+                        <div class="product-badge">Cementing</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/711-sodium-silicate.webp" alt="Sodium Silicate" onerror="this.src='img/product-11.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Sodium Silicate</a>
+                            <p class="small text-muted mb-2">Alkaline/Neutral Liquid Glass.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 1344-09-8</span>
+                                    <span><strong>Form:</strong> Liquid/Solid</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 300kg Drum</span>
+                                    <span><strong>Use:</strong> Cementing</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="711-Sodium-Silicate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oil-Gas-Drilling-Chemicals/712-paraformaldehyde.avif" alt="Paraformaldehyde" onerror="this.src='img/product-12.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Paraformaldehyde</a>
+                            <p class="small text-muted mb-2">96% Powder (H2S Scavenger).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 30525-89-4</span>
+                                    <span><strong>Type:</strong> Aldehyde</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Bactericide</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="712-Paraformaldehyde.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5 border">
+                        <h3 class="mb-4" style="color: #20685a;">Full Oilfield & Drilling Inventory</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover bg-white">
+                                <thead class="text-white" style="background-color: #20685a;">
+                                    <tr>
+                                        <th scope="col" class="py-3">Product Name</th>
+                                        <th scope="col" class="py-3">Category</th>
+                                        <th scope="col" class="py-3">Application</th>
+                                        <th scope="col" class="py-3">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Mud Additives & Viscosifiers</td></tr>
+                                    <tr><td class="fw-bold">Xanthan Gum (Oil Grade)</td><td>Viscosifier</td><td>Rheology Modifier, Thickener</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">PHPA Polymer</td><td>Stabilizer</td><td>Shale Encapsulation, Stability</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">PAC-R (Regular)</td><td>Fluid Loss</td><td>Filtration Control</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">PAC-LV (Low Viscosity)</td><td>Fluid Loss</td><td>Filtration without Viscosity</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">CMC (Carboxymethyl Cellulose)</td><td>Fluid Loss</td><td>Cost-effective Filtration</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Weighting Agents & Completion Fluids</td></tr>
+                                    <tr><td class="fw-bold">Barite Powder (4.2 SG)</td><td>Weighting</td><td>Increase Mud Density</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Calcium Carbonate (Acid Soluble)</td><td>Bridging</td><td>Lost Circulation Material</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Calcium Bromide (Liq/Pwdr)</td><td>Brine</td><td>Completion & Packer Fluid</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Potassium Formate</td><td>Brine</td><td>Eco-friendly Drilling Fluid</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Sodium Formate</td><td>Brine</td><td>Drilling & De-icing</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Specialty Chemicals & Biocides</td></tr>
+                                    <tr><td class="fw-bold">Glutaraldehyde 50%</td><td>Biocide</td><td>Prevents Bacterial Growth</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">BKC 80% (Benzalkonium Chloride)</td><td>Biocide</td><td>Corrosion Inhibitor, Algaecide</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Sodium Nitrite</td><td>Corrosion</td><td>Pipeline Protection</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Amine Based Corrosion Inhibitor</td><td>Corrosion</td><td>Filming Amine for Pipes</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Paraformaldehyde 96%</td><td>Scavenger</td><td>H2S Scavenger, Biocide</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">General Commodities for Drilling</td></tr>
+                                    <tr><td class="fw-bold">Potassium Chloride (KCL)</td><td>Inhibitor</td><td>Shale Inhibition</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Caustic Soda Flakes</td><td>Alkalinity</td><td>pH Control</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Soda Ash (Light/Dense)</td><td>Treating</td><td>Calcium Contamination Removal</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Sodium Bicarbonate</td><td>Treating</td><td>Cement Contamination Removal</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Citric Acid</td><td>Acidizing</td><td>Iron Sequestration, pH Control</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Sulfonated Asphalt</td><td>Stabilizer</td><td>Borehole Stabilization</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Melamine</td><td>Dispersant</td><td>Additive for Cementing</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Maleic Anhydride</td><td>Resin</td><td>Oil Field Resin Mfg</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="contact.html" class="btn btn-primary py-3 px-5">Download Full Catalog <i class="fa fa-download ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe for Market Updates</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Get weekly price trends for Drilling Chemicals directly in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

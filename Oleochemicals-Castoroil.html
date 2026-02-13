@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Products - Oleochemicals & Castor - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Product Card (E-commerce Style) */
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #20685a;
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #faaa05;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .product-img-container {
+            height: 220px;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-img-container img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #20685a;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .btn-cart-style {
+            background-color: #20685a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-cart-style:hover {
+            background-color: #175042;
+            color: #fff;
+        }
+
+        .btn-outline-style {
+            background-color: transparent;
+            color: #20685a;
+            border: 1px solid #20685a;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .btn-outline-style:hover {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Industry Icon Box */
+        .industry-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #f2f9f8;
+            color: #20685a;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid transparent;
+        }
+        .industry-pill:hover {
+            border-color: #faaa05;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                    </a>
+                </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Oleochemicals & Castor Oil</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Oleochemicals</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="border-start border-5 ps-4 mb-4" style="border-color: #faaa05 !important;">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05;">Natural & Sustainable</h6>
+                        <h1 class="display-5 mb-0" style="color: #20685a;">The Power of Plant Chemistry</h1>
+                    </div>
+                    <p class="fs-5 mb-4 text-muted">Oleochemicals are chemicals derived from plant and animal fats. They are the sustainable alternative to petrochemicals, playing a critical role in personal care, pharmaceuticals, and industrial lubricants.</p>
+                    <p class="mb-4">Ruvon International specializes in <strong>Castor Derivatives</strong> (sourced directly from Gujarat, the global hub) and high-quality <strong>Surfactants</strong> for the Home & Personal Care industry. We bridge the gap between nature's bounty and industrial application.</p>
+                    
+                    <div class="d-flex flex-wrap">
+                        <div class="industry-pill"><i class="fa fa-pump-soap me-2"></i>Personal Care</div>
+                        <div class="industry-pill"><i class="fa fa-oil-can me-2"></i>Lubricants</div>
+                        <div class="industry-pill"><i class="fa fa-soap me-2"></i>Soaps & Detergents</div>
+                        <div class="industry-pill"><i class="fa fa-tablets me-2"></i>Pharmaceuticals</div>
+                        <div class="industry-pill"><i class="fa fa-paint-brush me-2"></i>Paints & Resins</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid rounded shadow w-100" src="img/SECTIONS/Oleochemicals-castoroil.webp" alt="Castor Oil Processing" style="object-fit: cover; min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="display-6" style="color: #20685a;">Featured Oleo-Products</h3>
+                    <p class="text-muted">Premium Castor Derivatives & Surfactants.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-card">
+                        <div class="product-badge">Global Hub</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/501-castor-oil-fsg.webp" alt="Castor Oil" onerror="this.src='img/product-1.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Castor Oil (FSG)</a>
+                            <p class="small text-muted mb-2">First Special Grade (Indl).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 8001-79-4</span>
+                                    <span><strong>Acid Value:</strong> 2.0 Max</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 200kg/Flexi</span>
+                                    <span><strong>Use:</strong> Pharma/Lube</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="501-Castor-Oil-(FSG).html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="product-card">
+                        <div class="product-badge">Top Seller</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/502-sles70.webp" alt="SLES 70%" onerror="this.src='img/product-2.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">SLES 70% Paste</a>
+                            <p class="small text-muted mb-2">Sodium Lauryl Ether Sulfate.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Form:</strong> Gel Paste</span>
+                                    <span><strong>Active:</strong> 70% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 170kg Drum</span>
+                                    <span><strong>Use:</strong> Shampoo/Soap</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="502-SLES-70%-Paste.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-card">
+                        <div class="product-badge">CP Grade</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/503-Refined-Glycerine.webp" alt="Refined Glycerine" onerror="this.src='img/product-3.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Refined Glycerine</a>
+                            <p class="small text-muted mb-2">99.5% Vegetable Origin.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 56-81-5</span>
+                                    <span><strong>Grade:</strong> USP/CP</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 250kg Drum</span>
+                                    <span><strong>Use:</strong> Cosmetics</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="503-Refined-Glycerine.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="product-card">
+                        <div class="product-badge">High Margin</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/504-12-Hydroxystearic Acid.webp" alt="12-HSA" onerror="this.src='img/product-4.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">12-Hydroxystearic Acid</a>
+                            <p class="small text-muted mb-2">12-HSA (Castor Derivative).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Form:</strong> Flakes</span>
+                                    <span><strong>Color:</strong> White</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Grease/Lube</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="504-12-Hydroxystearic-Acid.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/505-LABSA-90%.webp" alt="LABSA 90%" onerror="this.src='img/product-5.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">LABSA 90%</a>
+                            <p class="small text-muted mb-2">Acid Slurry (Soft).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 27176-87-0</span>
+                                    <span><strong>Active:</strong> 90% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 220kg Drum</span>
+                                    <span><strong>Use:</strong> Detergents</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="505-LABSA-90.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/506-hydrogenated-castor-oil.webp" alt="Hydrogenated Castor Oil" onerror="this.src='img/product-6.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Hydrogenated Castor Oil</a>
+                            <p class="small text-muted mb-2">HCO (Castor Wax).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 8001-78-3</span>
+                                    <span><strong>Form:</strong> Flakes/Powder</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Thickener</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="506-Hydrogenated-Castor-Oil.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/507-soap-noodles.webp" alt="Soap Noodles" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Soap Noodles</a>
+                            <p class="small text-muted mb-2">80:20 (Palm/Coconut Blend).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>TFM:</strong> 78% Min</span>
+                                    <span><strong>Form:</strong> Noodle</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Soap Making</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="507-Soap-Noodles.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/508-Stearic-Acid.jpg" alt="Stearic Acid" onerror="this.src='img/product-8.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Stearic Acid</a>
+                            <p class="small text-muted mb-2">Rubber/PVC Grade.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 57-11-4</span>
+                                    <span><strong>Form:</strong> Beads/Flakes</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Rubber/PVC</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="508-Stearic-Acid.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="product-card">
+                        <div class="product-badge">Foam Booster</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/509-coconut-diethanolamide.jpg" alt="CDE" onerror="this.src='img/product-9.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Coco Diethanolamide (CDE)</a>
+                            <p class="small text-muted mb-2">Coconut Oil Derivative.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Type:</strong> Non-Ionic</span>
+                                    <span><strong>Form:</strong> Liquid</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 200kg Drum</span>
+                                    <span><strong>Use:</strong> Shampoo</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="509-Coco-Diethanolamide.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/510-CAPB.webp" alt="CAPB" onerror="this.src='img/product-10.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">CAPB (Betaine)</a>
+                            <p class="small text-muted mb-2">Coco Amido Propyl Betaine.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 61789-40-0</span>
+                                    <span><strong>Type:</strong> Mild</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 200kg Drum</span>
+                                    <span><strong>Use:</strong> Face Wash</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="510-CAPB.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/511-sls-powder.webp" alt="SLS Powder" onerror="this.src='img/product-11.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">SLS Powder</a>
+                            <p class="small text-muted mb-2">Sodium Lauryl Sulfate (Needles).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 151-21-3</span>
+                                    <span><strong>Active:</strong> 92% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 20kg Bag</span>
+                                    <span><strong>Use:</strong> Toothpaste</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="511-SLS-Powder.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                    <div class="product-card">
+                        <div class="product-badge">Specialty</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/512-ricinoleic-acid.jpg" alt="Ricinoleic Acid" onerror="this.src='img/product-12.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Ricinoleic Acid</a>
+                            <p class="small text-muted mb-2">Castor Oil Fatty Acid.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 141-22-0</span>
+                                    <span><strong>Purity:</strong> 85% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 190kg Drum</span>
+                                    <span><strong>Use:</strong> Textile/Leather</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="512-Ricinoleic-Acid.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5 border">
+                        <h3 class="mb-4" style="color: #20685a;">Full Inventory: Oleochemicals & Castor</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover bg-white">
+                                <thead class="text-white" style="background-color: #20685a;">
+                                    <tr>
+                                        <th scope="col" class="py-3">Product Name</th>
+                                        <th scope="col" class="py-3">CAS / Spec</th>
+                                        <th scope="col" class="py-3">Application</th>
+                                        <th scope="col" class="py-3">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Castor Oil Derivatives (Gujarat Hub)</td></tr>
+                                    <tr><td class="fw-bold">Castor Oil (FSG)</td><td>First Special Grade</td><td>Pharmaceuticals, Lubricants</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Hydrogenated Castor Oil (HCO)</td><td>Castor Wax</td><td>Thickener for Paints, Greases</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">12-Hydroxystearic Acid (12-HSA)</td><td>Flakes/Powder</td><td>Premium Grease Manufacturing</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Ricinoleic Acid</td><td>Liquid Fatty Acid</td><td>Textile, Leather, Cutting Oils</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Dehydrated Castor Oil (DCO)</td><td>Drying Oil</td><td>Paints, Varnishes, Alkyd Resins</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Turkey Red Oil (TRO)</td><td>Sulfonated Castor</td><td>Textile Dyeing Assistant</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Surfactants & Home Care</td></tr>
+                                    <tr><td class="fw-bold">SLES 70% (Paste)</td><td>Sodium Lauryl Ether Sulfate</td><td>Shampoo, Dishwash, Liquid Soap</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">LABSA 90% (Acid Slurry)</td><td>Linear Alkyl Benzene Sulphonic</td><td>Detergent Powder/Cake</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">SLS Powder (Needles)</td><td>Sodium Lauryl Sulfate</td><td>Toothpaste, Detergent</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">CAPB (Betaine)</td><td>Coco Amido Propyl Betaine</td><td>Mild Shampoo, Face Wash</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">CDE (Coco Diethanolamide)</td><td>Foam Booster</td><td>Shampoo Thickening Agent</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">AOS Liquid/Powder</td><td>Alpha Olefin Sulfonate</td><td>Fine Fabric Wash, Shampoo</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">BKC 50% / 80%</td><td>Benzalkonium Chloride</td><td>Disinfectant, Floor Cleaner</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Fatty Acids & Others</td></tr>
+                                    <tr><td class="fw-bold">Refined Glycerine 99.5%</td><td>CP/USP Grade</td><td>Cosmetics, Pharma, Food</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Stearic Acid</td><td>Rubber/Cosmetic Grade</td><td>Rubber, PVC, Candles</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Soap Noodles</td><td>80:20 Blend</td><td>Soap Manufacturing</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Oleic Acid</td><td>Vegetable Origin</td><td>Emulsifiers, Soaps</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Distilled Coconut Fatty Acid</td><td>DCFA</td><td>Alkyd Resins, Soaps</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="contact.html" class="btn btn-primary py-3 px-5">Download Full Catalog <i class="fa fa-download ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe for Market Updates</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Get weekly price trends for Oleochemicals directly in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Products - Agro Chemicals - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Product Card (E-commerce Style) */
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #20685a;
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #faaa05;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .product-img-container {
+            height: 220px;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-img-container img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #20685a;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .btn-cart-style {
+            background-color: #20685a;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-cart-style:hover {
+            background-color: #175042;
+            color: #fff;
+        }
+
+        .btn-outline-style {
+            background-color: transparent;
+            color: #20685a;
+            border: 1px solid #20685a;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .btn-outline-style:hover {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Industry Icon Box */
+        .industry-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #f2f9f8;
+            color: #20685a;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid transparent;
+        }
+        .industry-pill:hover {
+            border-color: #faaa05;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                    </a>
+                </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Agro Chemicals</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Agro</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="border-start border-5 ps-4 mb-4" style="border-color: #faaa05 !important;">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05;">Agriculture Division</h6>
+                        <h1 class="display-5 mb-0" style="color: #20685a;">The Green Growth</h1>
+                    </div>
+                    <p class="fs-5 mb-4 text-muted">Modern agriculture demands more than just basic fertilizers. It requires precision nutrition and advanced bio-stimulants to maximize yield and soil health. Ruvon International provides a curated range of high-efficiency plant nutrients.</p>
+                    <p class="mb-4">From 100% Water Soluble Fertilizers (WSF) for drip irrigation to essential Micronutrients and Organic Plant Growth Regulators (PGRs), we empower farmers and formulators with quality inputs that ensure greener crops and better harvests.</p>
+                    
+                    <div class="d-flex flex-wrap">
+                        <div class="industry-pill"><i class="fa fa-seedling me-2"></i>Plant Growth</div>
+                        <div class="industry-pill"><i class="fa fa-tint me-2"></i>Drip Irrigation</div>
+                        <div class="industry-pill"><i class="fa fa-flask me-2"></i>Soil Health</div>
+                        <div class="industry-pill"><i class="fa fa-leaf me-2"></i>Foliar Spray</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid rounded shadow w-100" src="img/SECTIONS/agro-chemicals.webp" alt="Agriculture Field" style="object-fit: cover; min-height: 400px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="display-6" style="color: #20685a;">Premium Crop Nutrients</h3>
+                    <p class="text-muted">High-performance micronutrients and bio-stimulants.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-card">
+                        <div class="product-badge">Export Hit</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/301-potassium-humate.webp" alt="Potassium Humate" onerror="this.src='img/product-1.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Potassium Humate</a>
+                            <p class="small text-muted mb-2">98% Shiny Flakes (Super).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Type:</strong> Organic Bio</span>
+                                    <span><strong>Solubility:</strong> 100%</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Root Growth</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="301-Potassium-Humate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/302-magnesium-sulphate.webp" alt="Magnesium Sulphate" onerror="this.src='img/product-2.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Magnesium Sulphate</a>
+                            <p class="small text-muted mb-2">Epsom Salt (Heptahydrate).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7487-88-9</span>
+                                    <span><strong>Form:</strong> Crystal</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 50kg Bag</span>
+                                    <span><strong>Use:</strong> Chlorophyll</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="302-Magnesium-Sulphate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-card">
+                        <div class="product-badge">High Value</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/303-Gibberellin-GA3.jpg" alt="Gibberellic Acid" onerror="this.src='img/product-3.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Gibberellic Acid (GA3)</a>
+                            <p class="small text-muted mb-2">Plant Growth Regulator (90%).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 77-06-5</span>
+                                    <span><strong>Type:</strong> PGR</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 1kg Drum</span>
+                                    <span><strong>Use:</strong> Growth/Size</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="303-Gibberellic-Acid.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="product-card">
+                        <div class="product-badge">Water Soluble</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/304-NPK-19.jpg" alt="NPK 19 19 19" onerror="this.src='img/product-4.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">NPK 19:19:19</a>
+                            <p class="small text-muted mb-2">100% Water Soluble Fertilizer.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Grade:</strong> WSF</span>
+                                    <span><strong>Color:</strong> Pink/White</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Drip Irrigation</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="304-NPK-19-19-19.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/305-Zinc-Sulphate.jpeg" alt="Zinc Sulphate" onerror="this.src='img/product-5.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Zinc Sulphate</a>
+                            <p class="small text-muted mb-2">Heptahydrate (21%) / Mono (33%).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7446-19-7</span>
+                                    <span><strong>Type:</strong> Micronutrient</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Soil Deficiency</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="305-Zinc-Sulphate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/306-Amino-Acid-Powder.webp" alt="Amino Acid Powder" onerror="this.src='img/product-6.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Amino Acid Powder</a>
+                            <p class="small text-muted mb-2">80% Soya Based (Hydrolyzed).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Source:</strong> Soya</span>
+                                    <span><strong>Form:</strong> Cream Powder</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 20kg Bag</span>
+                                    <span><strong>Use:</strong> Protein Tonic</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="306-Amino-Acid-Powder.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/307-Calcium-Nitrate.webp" alt="Calcium Nitrate" onerror="this.src='img/product-7.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Calcium Nitrate</a>
+                            <p class="small text-muted mb-2">100% Water Soluble (With Boron).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 10124-37-5</span>
+                                    <span><strong>Form:</strong> Granules</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Fruit Quality</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="307-Calcium-Nitrate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/308-Copper-Sulphate.webp" alt="Copper Sulphate" onerror="this.src='img/product-8.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Copper Sulphate</a>
+                            <p class="small text-muted mb-2">Blue Stone (24% Cu).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 7758-98-7</span>
+                                    <span><strong>Form:</strong> Crystal</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 50kg Bag</span>
+                                    <span><strong>Use:</strong> Fungicide</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="308-Copper-Sulphate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="product-card">
+                        <div class="product-badge">Organic</div>
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/309-Ascophyllum-Nodosum-Flakes.avif" alt="Seaweed Extract" onerror="this.src='img/product-9.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Seaweed Extract</a>
+                            <p class="small text-muted mb-2">Ascophyllum Nodosum Flakes.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Type:</strong> Bio-Stimulant</span>
+                                    <span><strong>K2O:</strong> 18% Min</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 20kg Bag</span>
+                                    <span><strong>Use:</strong> Yield Boost</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="309-Seaweed-Extract.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/310-borax-decahydrate.webp" alt="Borax Decahydrate" onerror="this.src='img/product-10.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Borax Decahydrate</a>
+                            <p class="small text-muted mb-2">Sodium Tetraborate (10.5% Boron).</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>CAS:</strong> 1303-96-4</span>
+                                    <span><strong>Form:</strong> Powder</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 50kg Bag</span>
+                                    <span><strong>Use:</strong> Micro-nutrient</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="310-Borax-Decahydrate.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/311-MKP-(0-52-34).jpg alt="MKP Fertilizer" onerror="this.src='img/product-11.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">MKP (0-52-34)</a>
+                            <p class="small text-muted mb-2">Mono Potassium Phosphate.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Grade:</strong> WSF</span>
+                                    <span><strong>Form:</strong> Crystal</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Flowering</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="311-mkp-0-52-34.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="img/PRODUCTS/Agro-Chemicals/312-Fulvic-Acid-80%.jpg" alt="Fulvic Acid" onerror="this.src='img/product-12.jpg'">
+                        </div>
+                        <div class="product-details">
+                            <a href="#" class="product-title">Fulvic Acid 80%</a>
+                            <p class="small text-muted mb-2">High Purity Bio-Stimulant.</p>
+                            <div class="product-meta">
+                                <div class="meta-row">
+                                    <span><strong>Origin:</strong> Mineral</span>
+                                    <span><strong>Solubility:</strong> 100%</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span><strong>Pkg:</strong> 25kg Bag</span>
+                                    <span><strong>Use:</strong> Absorption</span>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-cart-style">Inquire Now</a>
+                            <a href="312-Fulvic-Acid-80%.html" class="btn-outline-style">Product Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light rounded p-5 border">
+                        <h3 class="mb-4" style="color: #20685a;">Full Agro-Chemical Inventory</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover bg-white">
+                                <thead class="text-white" style="background-color: #20685a;">
+                                    <tr>
+                                        <th scope="col" class="py-3">Product Name</th>
+                                        <th scope="col" class="py-3">Composition/CAS</th>
+                                        <th scope="col" class="py-3">Application</th>
+                                        <th scope="col" class="py-3">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Micronutrients & Secondary Nutrients</td></tr>
+                                    <tr><td class="fw-bold">Magnesium Sulphate</td><td>Heptahydrate (9.6% Mg)</td><td>Chlorophyll, Greenness</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Zinc Sulphate 33%</td><td>Monohydrate</td><td>Zinc Deficiency, Soil Health</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Zinc Sulphate 21%</td><td>Heptahydrate</td><td>Foliar Spray, Fertigation</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Ferrous Sulphate</td><td>Dried/Crystal (19% Fe)</td><td>Iron Deficiency, Yellowing</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Manganese Sulphate</td><td>32% Mn</td><td>Photosynthesis, Enzyme Act.</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Copper Sulphate</td><td>24% Cu</td><td>Fungicide, Copper Deficiency</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Borax Decahydrate</td><td>10.5% Boron</td><td>Fruit Setting, Cell Wall</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Boric Acid</td><td>17% Boron</td><td>Seed Treatment, Foliar</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Chelated Zinc (Zn-EDTA)</td><td>12% Zn</td><td>High Efficiency Spray</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Chelated Iron (Fe-EDTA)</td><td>12% Fe</td><td>Instant Greening</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Water Soluble Fertilizers (WSF)</td></tr>
+                                    <tr><td class="fw-bold">NPK 19:19:19</td><td>Nitrogen, Phos, Potash</td><td>All Round Growth (Start)</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Mono Ammonium Phosphate</td><td>12-61-00 (MAP)</td><td>Root Development</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Mono Potassium Phosphate</td><td>00-52-34 (MKP)</td><td>Flowering & Fruiting</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Potassium Nitrate</td><td>13-00-45 (NOP)</td><td>Fruit Weight & Color</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Sulphate of Potash</td><td>00-00-50 (SOP)</td><td>Sugar Content, Quality</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Calcium Nitrate</td><td>18.8% Ca + 15.5% N</td><td>Prevent Fruit Cracking</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+
+                                    <tr class="table-secondary"><td colspan="4" class="fw-bold text-center">Bio-Stimulants & PGR</td></tr>
+                                    <tr><td class="fw-bold">Potassium Humate</td><td>98% Flakes</td><td>Root Development, Soil Cond.</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Fulvic Acid</td><td>80% Powder</td><td>Nutrient Uptake</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Amino Acid</td><td>80% Powder (Soya)</td><td>Stress Tolerance, Growth</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Seaweed Extract</td><td>Ascophyllum Nodosum</td><td>Organic Yield Booster</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">Gibberellic Acid (GA3)</td><td>90% Tech</td><td>Plant Growth Regulator</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                    <tr><td class="fw-bold">6-BA (Cytokinin)</td><td>98% Tech</td><td>Cell Division, Shooting</td><td><a href="contact.html" class="btn btn-sm btn-outline-dark">Get Quote</a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="contact.html" class="btn btn-primary py-3 px-5">Download Full Catalog <i class="fa fa-download ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Don't worry, we won't spam you with emails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Industries - Textiles & Dyes - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Textile Dyes, Reactive Dyes, Pigments, Ruvon" name="keywords">
+    <meta content="High-quality dyestuffs and textile auxiliaries for vibrant and sustainable fabric processing." name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Intro Feature Box */
+        .intro-feature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #20685a;
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .intro-feature-box:hover {
+            transform: translateY(-5px);
+            border-left-color: #faaa05;
+            background: #fbfbfb;
+        }
+
+        /* --- HORIZONTAL PRODUCT CARD DESIGN --- */
+        .pharma-product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row; /* Left Image, Right Content */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            margin: 10px 5px; /* Spacing for slider */
+            height: 100%; /* Equal height */
+        }
+        .pharma-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #20685a;
+        }
+        .pp-img-box {
+            width: 40%;
+            min-width: 40%; /* Fixed width for image area */
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pp-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .pharma-product-card:hover .pp-img-box img {
+            transform: scale(1.1);
+        }
+        .pp-content {
+            width: 60%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Mobile Adjustment */
+        @media (max-width: 768px) {
+            .pharma-product-card {
+                flex-direction: column;
+            }
+            .pp-img-box {
+                width: 100%;
+                height: 200px;
+            }
+            .pp-content {
+                width: 100%;
+            }
+        }
+
+        /* Buttons */
+        .btn-action-primary {
+            background-color: #20685a;
+            color: #fff;
+            border-radius: 5px;
+            padding: 8px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: 1px solid #20685a;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-action-primary:hover {
+            background-color: #175042;
+            color: #fff;
+        }
+        .btn-action-outline {
+            background-color: transparent;
+            color: #20685a;
+            border: 1px solid #20685a;
+            border-radius: 5px;
+            padding: 8px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-action-outline:hover {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Roadmap Section */
+        .roadmap-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            border-top: 4px solid #faaa05;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .roadmap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-top-color: #20685a;
+        }
+        .step-num {
+            font-size: 40px;
+            font-weight: 800;
+            color: #f0f2f5;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        
+        /* E-commerce Grid Box */
+        .e-cat-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .e-cat-card:hover {
+            border-color: #20685a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .e-cat-icon {
+            width: 60px;
+            height: 60px;
+            background: #f2f9f8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #20685a;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <h1 class="display-5 text-primary m-0">Ruvon</h1>
+                </a>
+            </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                        
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Textiles & Dyes</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Industries</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Textiles & Dyes</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="pe-lg-4">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05; letter-spacing: 1px;">Vibrant Solutions</h6>
+                        <h1 class="display-5 mb-4" style="color: #20685a;">Coloring the World, Sustainably</h1>
+                        <p class="fs-5 mb-4 text-muted">The textile industry demands vibrancy, consistency, and sustainability. Ruvon International sources premium quality dyestuffs, pigments, and textile auxiliaries from the chemical heartland of Gujarat, ensuring your fabrics leave a lasting impression.</p>
+                        <p class="mb-4">We partner with manufacturers who adhere to Zero Liquid Discharge (ZLD) norms and produce eco-friendly dyes with high color fastness. From pre-treatment to finishing, our chemical solutions cover every stage of textile processing.</p>
+                        
+                        <a href="contact.html" class="btn btn-outline-primary py-3 px-5 rounded-pill mt-3">Download Shade Card</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="intro-feature-box">
+                                <i class="fa fa-palette fa-2x mb-3" style="color: #20685a;"></i>
+                                <h5 class="mb-2">Reactive Dyes</h5>
+                                <p class="small text-muted mb-0">High exhaustion dyes for Cotton & Viscose.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="intro-feature-box">
+                                <i class="fa fa-tshirt fa-2x mb-3" style="color: #20685a;"></i>
+                                <h5 class="mb-2">Disperse Dyes</h5>
+                                <p class="small text-muted mb-0">Vibrant shades for Polyester & Blends.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="intro-feature-box">
+                                <i class="fa fa-tint fa-2x mb-3" style="color: #20685a;"></i>
+                                <h5 class="mb-2">Textile Auxiliaries</h5>
+                                <p class="small text-muted mb-0">Softening, Leveling & Fixing agents.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="intro-feature-box">
+                                <i class="fa fa-paint-brush fa-2x mb-3" style="color: #20685a;"></i>
+                                <h5 class="mb-2">Pigment Emulsions</h5>
+                                <p class="small text-muted mb-0">For textile printing with high durability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5 py-5 bg-light rounded my-5"> 
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: #faaa05;">Best Sellers</h6>
+                    <h2 class="display-6 mb-5" style="color: #20685a;">Trending Dyes & Chemicals</h2>
+                </div>
+                
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="owl-carousel testimonial-carousel">
+                        
+                        <div class="pharma-product-card">
+                            <div class="pp-img-box">
+                                <img src="img/PRODUCTS/Dyes-Pigments/reactive-black-b.jpg" alt="Reactive Black B" onerror="this.src='img/product-1.jpg'">
+                            </div>
+                            <div class="pp-content">
+                                <h4 class="mb-2" style="color: #20685a;">Reactive Black B</h4>
+                                <p class="text-muted small mb-2">Deep black shade for cellulosic fibers.</p>
+                                <div class="mb-3">
+                                    <small class="d-block text-dark"><strong>Code:</strong> 401</small>
+                                    <small class="d-block text-dark"><strong>Application:</strong> Dyeing & Printing</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="401-Reactive-Black-B.html" class="btn-action-outline flex-fill">See Details</a>
+                                    <a href="Quote-Now.html" class="btn-action-primary flex-fill">Inquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pharma-product-card">
+                            <div class="pp-img-box">
+                                <img src="img/PRODUCTS/Dyes-Pigments/pigment-blue-147-14-8.jpg" alt="Pigment Blue 15-3" onerror="this.src='img/product-2.jpg'">
+                            </div>
+                            <div class="pp-content">
+                                <h4 class="mb-2" style="color: #20685a;">Pigment Blue 15-3</h4>
+                                <p class="text-muted small mb-2">Bright Phthalocyanine Blue.</p>
+                                <div class="mb-3">
+                                    <small class="d-block text-dark"><strong>Fastness:</strong> Excellent to Light</small>
+                                    <small class="d-block text-dark"><strong>Usage:</strong> Textile Printing Ink</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="402-Pigment-Blue-15-3.html" class="btn-action-outline flex-fill">See Details</a>
+                                    <a href="Quote-Now.html" class="btn-action-primary flex-fill">Inquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pharma-product-card">
+                            <div class="pp-img-box">
+                                <img src="img/PRODUCTS/organic-chemicals/204-Acetic-Acid-Glacial.jpg" alt="Acetic Acid" onerror="this.src='img/product-3.jpg'">
+                            </div>
+                            <div class="pp-content">
+                                <h4 class="mb-2" style="color: #20685a;">Acetic Acid Glacial</h4>
+                                <p class="text-muted small mb-2">Essential pH buffer for dyeing process.</p>
+                                <div class="mb-3">
+                                    <small class="d-block text-dark"><strong>Purity:</strong> 99.85% Min</small>
+                                    <small class="d-block text-dark"><strong>Grade:</strong> Industrial / Textile</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="204-Acetic-Acid-Glacial.html" class="btn-action-outline flex-fill">See Details</a>
+                                    <a href="Quote-Now.html" class="btn-action-primary flex-fill">Inquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pharma-product-card">
+                            <div class="pp-img-box">
+                                <img src="img/PRODUCTS/Dyes-Pigments/reactive-turquoise-blue-g.png" alt="Turq Blue G" onerror="this.src='img/product-4.jpg'">
+                            </div>
+                            <div class="pp-content">
+                                <h4 class="mb-2" style="color: #20685a;">Reactive Turq Blue G</h4>
+                                <p class="text-muted small mb-2">Vibrant Turquoise shade.</p>
+                                <div class="mb-3">
+                                    <small class="d-block text-dark"><strong>Code:</strong> 409</small>
+                                    <small class="d-block text-dark"><strong>Type:</strong> Hot Brand</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="409-Reactive-Turq-Blue-G.html" class="btn-action-outline flex-fill">See Details</a>
+                                    <a href="Quote-Now.html" class="btn-action-primary flex-fill">Inquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 text-center mb-3">
+                    <h3 class="mb-2" style="color: #20685a;">Product Categories</h3>
+                    <p class="text-muted">A comprehensive range for dye-houses and textile mills.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="e-cat-card h-100">
+                        <div class="e-cat-icon">
+                            <i class="fa fa-fill-drip fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">Synthetic Dyes</h5>
+                        <p class="small text-muted mb-3">Reactive, Acid, Direct, Solvent Dyes</p>
+                        <a href="Dyes-Pigments.html" class="text-primary small fw-bold">View Catalog <i class="fa fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="e-cat-card h-100">
+                        <div class="e-cat-icon">
+                            <i class="fa fa-palette fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">Pigments</h5>
+                        <p class="small text-muted mb-3">Phthalocyanine Blues & Greens</p>
+                        <a href="Dyes-Pigments.html" class="text-primary small fw-bold">View Catalog <i class="fa fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="e-cat-card h-100">
+                        <div class="e-cat-icon">
+                            <i class="fa fa-vial fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">Pre-treatment</h5>
+                        <p class="small text-muted mb-3">Hydrogen Peroxide, Caustic Soda</p>
+                        <a href="Inorganic-Chemicals.html" class="text-primary small fw-bold">View Catalog <i class="fa fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="e-cat-card h-100">
+                        <div class="e-cat-icon">
+                            <i class="fa fa-tshirt fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">Printing Auxiliaries</h5>
+                        <p class="small text-muted mb-3">Thickeners, Binders, Fixers</p>
+                        <a href="Dyes-Pigments.html" class="text-primary small fw-bold">View Catalog <i class="fa fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mt-5">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: #faaa05;">Our Support</h6>
+                    <h2 class="display-6 mb-5" style="color: #20685a;">Streamlining Textile Procurement</h2>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="roadmap-card">
+                        <div class="step-num">01</div>
+                        <h5 class="mb-3" style="color: #20685a;">Global Sourcing</h5>
+                        <p class="text-muted small">Sourcing high-quality dye intermediates and auxiliaries from established manufacturers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="roadmap-card">
+                        <div class="step-num">02</div>
+                        <h5 class="mb-3" style="color: #20685a;">Color Matching</h5>
+                        <p class="text-muted small">Providing lab-dip support to ensure shade consistency batch after batch.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="roadmap-card">
+                        <div class="step-num">03</div>
+                        <h5 class="mb-3" style="color: #20685a;">Compliance</h5>
+                        <p class="text-muted small">Ensuring products meet GOTS, Oeko-Tex, and REACH standards for export markets.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="roadmap-card">
+                        <div class="step-num">04</div>
+                        <h5 class="mb-3" style="color: #20685a;">Efficient Packing</h5>
+                        <p class="text-muted small">Customized packaging in 25kg drums or cartons to prevent leakage and damage.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Don't worry, we won't spam you with emails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

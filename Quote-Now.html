@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Get a Quote - Ruvon International</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Global Chemical Sourcing & Export" name="keywords">
+    <meta content="Get a customized quote for domestic and international chemical supplies from Ruvon International." name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* --- RUVON BUSINESS THEME COLORS UPDATED --- */
+        :root {
+            --ruvon-primary: #faaa05;  /* New Yellow/Orange */
+            --ruvon-secondary: #20685a; /* New Teal/Green */
+            --ruvon-text: #333333;
+        }
+
+        /* Overriding Bootstrap Primary Colors to Match Brand */
+        .text-primary { color: var(--ruvon-primary) !important; }
+        .bg-primary { background-color: var(--ruvon-primary) !important; }
+        
+        /* Buttons */
+        .btn-primary { 
+            background-color: var(--ruvon-primary); 
+            border-color: var(--ruvon-primary);
+            color: #000; /* Text black on yellow for better readability */
+        }
+        .btn-primary:hover { 
+            background-color: var(--ruvon-secondary); 
+            border-color: var(--ruvon-secondary);
+            color: #fff; /* Text white on teal when hovered */
+        }
+        
+        .bg-secondary { background-color: var(--ruvon-secondary) !important; }
+
+        /* Form Container Styling */
+        .inquiry-box {
+            background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        /* The Switcher / Toggle Styling */
+        .form-switcher {
+            display: flex;
+            background: #f8f9fa;
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .switcher-btn {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: #6c757d;
+            border: none;
+            background: transparent;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .switcher-btn:hover {
+            background: rgba(250, 170, 5, 0.1); /* Light Primary Hover */
+            color: var(--ruvon-secondary);
+        }
+
+        /* Active State for Buttons - BRAND COLOR MATCHED */
+        .switcher-btn.active {
+            background: var(--ruvon-secondary); /* Teal Background */
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(32, 104, 90, 0.4);
+            border-bottom: 4px solid var(--ruvon-primary); /* Yellow Accent Line */
+        }
+
+        /* Animation for Switching */
+        .form-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            padding: 40px;
+        }
+
+        .form-section.active-form {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fix Bootstrap Floating Labels overlap with Select */
+        .form-floating > .form-select {
+            padding-top: 1.625rem;
+            padding-bottom: 0.625rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4"> 
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0 text-white">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                    <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                    <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>    
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                        
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-light ms-2" href="#!"><i class="fab fa-instagram text-secondary"></i></a>
+                        <a class="btn btn-square btn-light ms-2" href="#!"><i class="fab fa-facebook-f text-secondary"></i></a>
+                        <a class="btn btn-square btn-light ms-2" href="#!"><i class="fab fa-youtube text-secondary"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 text-black animated slideInDown">Get a Quote</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-primary" aria-current="page">Quote Inquiry</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                        <p class="section-title bg-white text-center text-primary px-3">Inquiry Form</p>
+                        <h1 class="display-6 mb-4">Tell Us Your Requirement</h1>
+                        <p class="text-muted">Select the type of inquiry below to get a customized quote.</p>
+                    </div>
+
+                    <div class="inquiry-box wow fadeInUp" data-wow-delay="0.3s">
+                        
+                        <div class="form-switcher">
+                            <button class="switcher-btn active" onclick="switchForm('domestic')">
+                                <i class="fa fa-truck me-2"></i> Domestic Inquiry (India)
+                            </button>
+                            <button class="switcher-btn" onclick="switchForm('export')">
+                                <i class="fa fa-globe-americas me-2"></i> Global Export Inquiry
+                            </button>
+                        </div>
+
+                        <div id="domesticForm" class="form-section active-form">
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                
+                                <input type="hidden" name="access_key" value="42136507-2777-4671-bd33-8a7b7d50cb3f">
+                                
+                                <input type="hidden" name="subject" value="Quotation Inquiry (Domestic)">
+                                <input type="hidden" name="Inquiry_Type" value="Domestic Supply">
+
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="alert alert-light border-start border-primary border-4 py-2" role="alert">
+                                            <small><i class="fa fa-info-circle text-primary me-2"></i> You are submitting an inquiry for <strong>Domestic Supply (Within India)</strong>.</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Contact_Person" id="domName" placeholder="Your Name" required>
+                                            <label for="domName">Contact Person Name *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Company_Name" id="domCompany" placeholder="Company Name" required>
+                                            <label for="domCompany">Company / Firm Name *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" name="Email_Address" id="domEmail" placeholder="Email" required>
+                                            <label for="domEmail">Official Email ID *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" name="Mobile_Number" id="domPhone" placeholder="Phone" required>
+                                            <label for="domPhone">Mobile / WhatsApp *</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Delivery_State" id="domState" required>
+                                                <option selected disabled value="">Select Delivery State</option>
+                                            </select>
+                                            <label for="domState">Delivery State (For Transport) *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" name="Pincode" id="domPincode" placeholder="Pincode">
+                                            <label for="domPincode">Pincode (Optional)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="GST_Number" id="domGST" placeholder="GST No">
+                                            <label for="domGST">GST Number (Optional - For Verification)</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12"><hr class="my-2 opacity-25"></div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Product_Category" id="domCategory">
+                                                <option selected disabled>Select Category</option>
+                                                <option value="Inorganic">Inorganic Chemicals</option>
+                                                <option value="Organic">Organic Chemicals</option>
+                                                <option value="Agro">Agro-Chemicals</option>
+                                                <option value="Dyes">Dyes & Pigments</option>
+                                                <option value="Oleo">Oleochemicals & Castor</option>
+                                                <option value="Petro">Petrochemicals & Solvents</option>
+                                                <option value="Drilling">Oil & Gas Drilling</option>
+                                            </select>
+                                            <label for="domCategory">Product Category *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Product_Name" id="domProduct" placeholder="Product Name">
+                                            <label for="domProduct">Product Name / Grade *</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" name="Quantity" id="domQty" placeholder="Quantity">
+                                            <label for="domQty">Required Quantity</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Unit" id="domUnit">
+                                                <option value="MT">MT (Metric Ton)</option>
+                                                <option value="Kg">Kg</option>
+                                                <option value="Drums">Drums</option>
+                                                <option value="Tanker">Full Tanker Load</option>
+                                            </select>
+                                            <label for="domUnit">Unit</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Msg" name="Specific_Requirements" id="domMsg" style="height: 100px"></textarea>
+                                            <label for="domMsg">Any Specific Requirements?</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Submit Domestic Inquiry</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="exportForm" class="form-section">
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                
+                                <input type="hidden" name="access_key" value="ebf6eae6-76f7-441f-8cc6-a076487f6062">
+                                
+                                <input type="hidden" name="subject" value="Quotation Inquiry (Export)">
+                                <input type="hidden" name="Inquiry_Type" value="Global Export">
+
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="alert alert-light border-start border-success border-4 py-2" role="alert">
+                                            <small><i class="fa fa-globe text-success me-2"></i> You are submitting an inquiry for <strong>International Export</strong>.</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Contact_Person" id="expName" placeholder="Name" required>
+                                            <label for="expName">Contact Person Name *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Company_Name" id="expCompany" placeholder="Company" required>
+                                            <label for="expCompany">Company Name *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" name="Email_Address" id="expEmail" placeholder="Email" required>
+                                            <label for="expEmail">Business Email *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" name="WhatsApp_Number" id="expPhone" placeholder="Phone">
+                                            <label for="expPhone">WhatsApp (With Country Code) *</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Destination_Country" id="expCountry" required>
+                                                <option selected disabled value="">Select Destination Country</option>
+                                            </select>
+                                            <label for="expCountry">Destination Country *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Discharge_Port" id="expPort" placeholder="Port" required>
+                                            <label for="expPort">Port of Discharge (For CIF Price) *</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12"><hr class="my-2 opacity-25"></div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Product_Name" id="expProduct" placeholder="Product">
+                                            <label for="expProduct">Product Name *</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="CAS_Number" id="expCAS" placeholder="CAS">
+                                            <label for="expCAS">CAS No. (Recommended)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Incoterms" id="expIncoterm">
+                                                <option value="FOB">FOB (Free on Board)</option>
+                                                <option value="CIF" selected>CIF (Cost, Insurance, Freight)</option>
+                                                <option value="EXW">EXW (Ex-Works)</option>
+                                            </select>
+                                            <label for="expIncoterm">Incoterms</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" name="Order_Quantity" id="expQty" placeholder="Quantity">
+                                            <label for="expQty">Order Quantity</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Unit" id="domUnit">
+                                                <option value="MT">MT (Metric Ton)</option>
+                                                <option value="Kg">Kg</option>
+                                                <option value="Drums">Drums</option>
+                                                <option value="Tanker">Full Tanker Load</option>
+                                            </select>
+                                            <label for="domUnit">Unit</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" name="Packaging_Mode" id="expPkg">
+                                                <option value="FCL">FCL (Full Container Load)</option>
+                                                <option value="LCL">LCL (Less Container Load)</option>
+                                                <option value="ISO">ISO Tank</option>
+                                                <option value="Air">Air Cargo</option>
+                                                <option value="Bags">25kg Bags</option>
+                                            </select>
+                                            <label for="expPkg">Shipment/Packaging Mode</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Msg" name="Specs_Requirements" id="expMsg" style="height: 100px"></textarea>
+                                            <label for="expMsg">Specific Specs / Purity / Packaging Requirements</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-dark w-100 py-3" type="submit">Request Export Quote</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Don't worry, we won't spam you with emails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        // 1. Form Switcher Logic
+        function switchForm(type) {
+            const domesticForm = document.getElementById('domesticForm');
+            const exportForm = document.getElementById('exportForm');
+            const btns = document.querySelectorAll('.switcher-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+
+            if (type === 'domestic') {
+                domesticForm.classList.add('active-form');
+                exportForm.classList.remove('active-form');
+                btns[0].classList.add('active');
+            } else {
+                exportForm.classList.add('active-form');
+                domesticForm.classList.remove('active-form');
+                btns[1].classList.add('active');
+            }
+        }
+
+        // 2. Data Arrays for States and Countries
+        const indianStates = [
+            "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", 
+            "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", 
+            "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", 
+            "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", 
+            "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", 
+            "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+        ];
+
+        const worldCountries = [
+            "Afghanistan", "Albania", "Algeria", "Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", 
+            "Belgium", "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Croatia", "Czech Republic", 
+            "Denmark", "Egypt", "Ethiopia", "Finland", "France", "Germany", "Ghana", "Greece", "Hong Kong", 
+            "Hungary", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Japan", "Jordan", 
+            "Kenya", "Kuwait", "Malaysia", "Mexico", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand", 
+            "Nigeria", "Norway", "Oman", "Pakistan", "Philippines", "Poland", "Portugal", "Qatar", "Romania", 
+            "Russia", "Saudi Arabia", "Singapore", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", 
+            "Switzerland", "Taiwan", "Tanzania", "Thailand", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", 
+            "United Kingdom", "United States", "Vietnam", "Yemen", "Zimbabwe"
+        ];
+
+        // 3. Function to Populate Dropdowns
+        function populateDropdown(elementId, dataArray) {
+            const selectElement = document.getElementById(elementId);
+            if (!selectElement) return;
+
+            // Add options
+            dataArray.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item;
+                option.text = item;
+                selectElement.appendChild(option);
+            });
+        }
+
+        // 4. Initialize on Page Load
+        document.addEventListener('DOMContentLoaded', function() {
+            populateDropdown("domState", indianStates);
+            populateDropdown("expCountry", worldCountries);
+        });
+    </script>
+</body>
+
+</html>

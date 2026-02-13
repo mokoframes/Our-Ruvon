@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Services - Supply Chain & Logistics - Ruvon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Navbar Fix */
+        .sticky-top {
+            z-index: 1020 !important;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Logistics Card */
+        .logistics-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .logistics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #faaa05;
+        }
+        .logistics-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #f2f9f8;
+            color: #20685a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .logistics-card:hover .logistics-icon {
+            background-color: #20685a;
+            color: #fff;
+        }
+
+        /* Incoterms Box */
+        .incoterm-box {
+            background: #fff;
+            padding: 25px;
+            border-left: 5px solid #20685a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .incoterm-box:hover {
+            border-left-color: #faaa05;
+            transform: translateX(5px);
+        }
+        
+        /* Step Flow */
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #faaa05;
+            color: #000;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+           <div class="col-lg-4 text-center text-lg-start">
+                <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
+                    </a>
+                </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us</h6>
+                                <span class="text-white">+91 9773071752</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@ruvonchemicals.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Vadodara, India - 390019.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+      <!-- Navbar Start -->
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Company-Profile.html" class="dropdown-item">Company Profile</a>
+                                <a href="Vision-Misson.html" class="dropdown-item">Vision & Mission</a>
+                                <a href="Our-Values.html" class="dropdown-item">Our Values</a>
+                                <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
+                                <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
+                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
+                                   
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Inorganic-Chemicals.html" class="dropdown-item">Inorganic Chemicals</a>
+                                <a href="Organic-Chemicals.html" class="dropdown-item">Organic Chemicals</a>
+                                <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a>
+                                <a href="Dyes-Pigments.html" class="dropdown-item">Dyes & Pigments</a>
+                                <a href="Oleochemicals-Castoroil.html" class="dropdown-item">Oleochemicals & Castor Oil</a>
+                                <a href="Petrochemicals-IndustrialSolvents.html" class="dropdown-item">Petrochemicals & Industrial Solvents</a>
+                                <!-- <a href="Pharmaceutical-Raw-Materials.html" class="dropdown-item">Pharmaceutical Raw Materials & Excipients</a> -->
+                                <a href="Oil-GasDrilling-Chemicals.html" class="dropdown-item">Oil & Gas Drilling Chemicals</a>   
+                            </div>
+                        </div>
+                         <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries We Serve</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <!-- <a href="Pharmaceuticals.html" class="dropdown-item">Pharmaceuticals</a> -->
+                                <a href="Agriculture.html" class="dropdown-item">Agriculture</a>
+                                <!-- <a href="Agro-Chemicals.html" class="dropdown-item">Agro-Chemicals</a> -->
+                                <a href="Textile-Dyes.html" class="dropdown-item">Textile & Dyes</a>
+                                <a href="Paints-Coatings.html" class="dropdown-item">Paints & Coatings</a>
+                                <a href="Oil-Gas.html" class="dropdown-item">Oil & Gas</a>
+                                <!-- <a href="FMCG-Home-Care.html" class="dropdown-item">FMCG & Home Care</a> -->
+                                <!-- <a href="Plastic-Polymer.html" class="dropdown-item">Plastic & Polymer</a> -->
+                                <a href="Food-Beverages.html" class="dropdown-item">Food & Beverages</a>  
+                                <a href="Water-Treatment.html" class="dropdown-item">Water Treatment</a>    
+                            </div>
+                        </div>
+                    
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="Global-Sourcing-Procurement.html" class="dropdown-item">Global Sourcing</a>
+                                <a href="Contract-Manufacturing.html" class="dropdown-item">Contract Manufacturing</a>
+                                <a href="Quality-Assurance.html" class="dropdown-item">Quality Assurance</a>
+                                <a href="Supply-Chain-Logistics.html" class="dropdown-item">Supply Chain & Logistics</a>
+                                <a href="Custom-Packaging.html" class="dropdown-item">Custom Packaging</a>
+                                <a href="Indenting-Channel-Partnership.html" class="dropdown-item">Indenting & Channel Partnership</a>
+                            </div>
+                        </div>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="event.html" class="dropdown-item">Event</a>
+                                <a href="feature.html" class="dropdown-item">Feature</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div> -->
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto">
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Supply Chain & Logistics</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Logistics</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Logistics Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <!-- SECTION 1: INTRO -->
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid rounded shadow w-100 h-100" src="img/SERVICES/supply-chain-logistic.webp" alt="Global Logistics" style="object-fit: cover; min-height: 400px;">
+                        <div class="position-absolute top-0 start-0 bg-white rounded p-3 m-3 shadow-sm border-start border-5" style="border-color: #faaa05 !important;">
+                            <h5 class="m-0" style="color: #20685a;">Global Reach</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="ps-lg-4">
+                        <h6 class="text-uppercase mb-2 fw-bold" style="color: #faaa05; letter-spacing: 1px;">End-to-End Solutions</h6>
+                        <h1 class="display-5 mb-4" style="color: #20685a;">Delivering Chemistry, On Time & Safely</h1>
+                        <p class="fs-5 mb-4 text-muted">In the chemical industry, logistics is not just about transportation; it's about handling hazardous materials, managing temperature sensitivity, and ensuring compliance with international maritime laws.</p>
+                        <p class="mb-4">At Ruvon International, we offer a seamless supply chain experience. From the factory floor in Gujarat to your warehouse in New York or Hamburg, we manage every step. Our strategic proximity to <strong>Nhava Sheva</strong> and <strong>Hazira Ports</strong> allows us to offer competitive freight rates and faster vessel connectivity.</p>
+                        
+                        <a href="contact.html" class="btn btn-primary py-3 px-5">Get Freight Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: MODES OF TRANSPORT (GRID) -->
+            <div class="row g-4 mb-5 py-4">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-uppercase fw-bold mb-2" style="color: #faaa05;">Logistics Capabilities</h6>
+                    <h2 class="display-6 mb-5" style="color: #20685a;">How We Move Your Cargo</h2>
+                </div>
+
+                <!-- Sea Freight -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="logistics-card text-center">
+                        <div class="logistics-icon mx-auto">
+                            <i class="fa fa-ship fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: #20685a;">Ocean Freight</h4>
+                        <p class="text-muted small">Specialized in FCL (Full Container Load) and LCL shipments. We handle dry vans for packed goods and ISO Tanks for bulk liquid chemicals.</p>
+                    </div>
+                </div>
+
+                <!-- Air Freight -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="logistics-card text-center">
+                        <div class="logistics-icon mx-auto">
+                            <i class="fa fa-plane-departure fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: #20685a;">Air Freight</h4>
+                        <p class="text-muted small">For urgent API samples or high-value low-volume intermediates. We ensure IATA compliant packaging for dangerous goods air transport.</p>
+                    </div>
+                </div>
+
+                <!-- Inland Transport -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="logistics-card text-center">
+                        <div class="logistics-icon mx-auto">
+                            <i class="fa fa-truck-moving fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3" style="color: #20685a;">Inland Haulage</h4>
+                        <p class="text-muted small">Robust trucking network connecting GIDC manufacturing plants directly to the port terminals, ensuring minimal transit time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: INCOTERMS EXPLAINED (Side by Side) -->
+            <div class="row g-5 mb-5 align-items-center bg-light rounded p-4 mx-0">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="mb-4" style="color: #20685a;">Flexible Incoterms</h3>
+                    <p class="mb-4">We understand that every buyer has different logistics preferences. We are flexible to work on terms that suit your business model.</p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa fa-check-circle fa-lg me-3" style="color: #faaa05;"></i>
+                        <span class="fw-bold">Door-to-Door Delivery (DAP/DDP)</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa fa-check-circle fa-lg me-3" style="color: #faaa05;"></i>
+                        <span class="fw-bold">Port-to-Port (CIF/CFR)</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-check-circle fa-lg me-3" style="color: #faaa05;"></i>
+                        <span class="fw-bold">Ex-Works (EXW/FOB)</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row g-3">
+                        <!-- FOB -->
+                        <div class="col-md-6">
+                            <div class="incoterm-box">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0 fw-bold">FOB</h5>
+                                    <span class="badge bg-secondary">Free On Board</span>
+                                </div>
+                                <p class="small text-muted mb-0">We handle transport, customs, and loading at the Indian port. You manage the ocean freight.</p>
+                            </div>
+                        </div>
+                        <!-- CIF -->
+                        <div class="col-md-6">
+                            <div class="incoterm-box" style="border-left-color: #faaa05;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0 fw-bold">CIF</h5>
+                                    <span class="badge bg-primary">Cost, Insurance, Freight</span>
+                                </div>
+                                <p class="small text-muted mb-0">We manage everything until the shipment reaches your destination port, including insurance.</p>
+                            </div>
+                        </div>
+                        <!-- EXW -->
+                        <div class="col-md-6">
+                            <div class="incoterm-box">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0 fw-bold">EXW</h5>
+                                    <span class="badge bg-dark">Ex-Works</span>
+                                </div>
+                                <p class="small text-muted mb-0">You pick up the goods directly from our factory warehouse. Maximum control for you.</p>
+                            </div>
+                        </div>
+                        <!-- DAP -->
+                        <div class="col-md-6">
+                            <div class="incoterm-box" style="border-left-color: #faaa05;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0 fw-bold">DAP</h5>
+                                    <span class="badge bg-success">Delivered at Place</span>
+                                </div>
+                                <p class="small text-muted mb-0">Hassle-free. We deliver the goods right to your warehouse doorstep.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: SAFETY & DOCUMENTATION (DG Handling) -->
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="h-100 p-5 bg-white border rounded shadow-sm">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fa fa-skull-crossbones fa-3x me-3 text-danger"></i>
+                            <h4 class="mb-0" style="color: #20685a;">Hazmat Handling Expertise</h4>
+                        </div>
+                        <p class="mb-4">Shipping Dangerous Goods (DG) requires specialized knowledge. We are experts in <strong>IMDG Code compliance</strong>.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fa fa-check me-2 text-success"></i> UN Certified Packaging (Drums/IBCs)</li>
+                            <li class="mb-3"><i class="fa fa-check me-2 text-success"></i> Correct DG Labeling & Placarding</li>
+                            <li class="mb-0"><i class="fa fa-check me-2 text-success"></i> Hazmat Declarations for Shipping Lines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="h-100 p-5 bg-white border rounded shadow-sm">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fa fa-file-contract fa-3x me-3 text-primary"></i>
+                            <h4 class="mb-0" style="color: #20685a;">Documentation Guarantee</h4>
+                        </div>
+                        <p class="mb-4">Errors in paperwork cause delays. We ensure your clearing agent receives flawless documents.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fa fa-file-alt me-2 text-muted"></i> Bill of Lading (BL) & Invoice</li>
+                            <li class="mb-3"><i class="fa fa-file-alt me-2 text-muted"></i> Certificate of Analysis (COA) & MSDS</li>
+                            <li class="mb-0"><i class="fa fa-file-alt me-2 text-muted"></i> Certificate of Origin (COO) / GSP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Logistics Content End -->
+
+
+    <!-- Footer Start -->
+     <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Don't worry, we won't spam you with emails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                    <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International"
+                        style="max-height: 55px; width: auto; object-fit: contain;">
+                </a>
+                <p></p>
+                    <p>Ruvon International Pvt. Ltd.<br>Global chemical sourcing and supply.</p>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>A/6, Parimal Soc-2, Behind Sardar
+                            Estate, Ajwa Road, Vadodara, India - 390019</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97730 71752</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 77780 56001</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ruvonchemicals.com</p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square me-1" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square me-0" href="#!"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Corporate Profile</h5>
+                    <a class="btn btn-link" href="Company-Profile.html">Company Profile</a>
+                    <a class="btn btn-link" href="Vision-Misson.html">Vision & Mission</a>
+                    <a class="btn btn-link" href="Our-Values.html">Our Values</a>
+                    <a class="btn btn-link" href="Leadership-Team.html">Leadership Team</a>
+                    <a class="btn btn-link" href="Certification-Compliance.html">Certifications</a>
+                    <a class="btn btn-link" href="Global-Network.html">Global Network</a>
+                    <a class="btn btn-link" href="Why-Ruvon.html">Why Ruvon</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Our Products</h5>
+                    <a class="btn btn-link" href="Inorganic-Chemicals.html">Inorganic Chemicals</a>
+                    <a class="btn btn-link" href="Organic-Chemicals.html">Organic Chemicals</a>
+                    <a class="btn btn-link" href="Agro-Chemicals.html">Agro-Chemicals</a>
+                    <a class="btn btn-link" href="Dyes-Pigments.html">Dyes & Pigments</a>
+                    <a class="btn btn-link" href="Oleochemicals-Castoroil.html">Oleochemicals & Castor</a>
+                    <a class="btn btn-link" href="Petrochemicals-IndustrialSolvents.html">Petrochemicals & Solvents</a>
+                    <a class="btn btn-link" href="Pharmaceutical-Raw-Materials.html">Pharma Raw Materials</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Industries & Services</h5>
+                    <a class="btn btn-link" href="Pharmaceuticals.html">Pharmaceuticals</a>
+                    <a class="btn btn-link" href="Agriculture.html">Agriculture & Farming</a>
+                    <a class="btn btn-link" href="Paints-Coatings.html">Paints & Coatings</a>
+                    <a class="btn btn-link" href="Global-Sourcing-Procurement.html">Global Sourcing</a>
+                    <a class="btn btn-link" href="Supply-chain-logistics.html">Supply Chain Logistics</a>
+                    <a class="btn btn-link" href="Quality-Assurance.html">Quality Control</a>
+                    <a class="btn btn-link" href="Terms-Conditions.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Ruvon International Pvt Ltd</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="">@RuvonTeam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="chat-btn" onclick="toggleChat()">
+        <i class="fa fa-comments fa-2x"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <img src="img/LOGO/ruvon-logo.png" alt="Bot"
+                    style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
+                <div>
+                    <!-- <h5>Ruvon Assistant</h5>
+                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
+                </div>
+            </div>
+            <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
