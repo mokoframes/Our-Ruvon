@@ -106,6 +106,38 @@
         ]
     });
 
+    // Mobile Navbar Dropdown Toggle
+    $(document).ready(function () {
+        function isMobile() {
+            return window.innerWidth < 992;
+        }
+        function closeAllDropdowns() {
+            $('.navbar .dropdown-menu').removeClass('show');
+        }
+        // Toggle dropdown on click for mobile
+        $('.navbar .dropdown-toggle').on('click', function (e) {
+            if (isMobile()) {
+                e.preventDefault();
+                var $parent = $(this).parent('.dropdown');
+                var $menu = $parent.find('.dropdown-menu').first();
+                $menu.toggleClass('show');
+                $parent.siblings('.dropdown').find('.dropdown-menu').removeClass('show');
+            }
+        });
+        // Hide dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (isMobile() && !$(e.target).closest('.navbar-nav').length) {
+                closeAllDropdowns();
+            }
+        });
+        // Hide dropdowns on resize
+        $(window).on('resize', function () {
+            if (!isMobile()) {
+                closeAllDropdowns();
+            }
+        });
+    });
+
     
 })(jQuery);
 
