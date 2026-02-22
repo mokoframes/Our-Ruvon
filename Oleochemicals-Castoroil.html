@@ -126,6 +126,8 @@
             font-weight: 600;
             transition: 0.3s;
             margin-top: auto;
+            text-align: center;
+            text-decoration: none;
         }
 
         .btn-cart-style:hover {
@@ -169,6 +171,71 @@
             border-color: #faaa05;
             background: #fff;
         }
+
+        /* =========================================
+           MOBILE RESPONSIVENESS ADD-ONS
+           ========================================= */
+        @media (max-width: 767px) {
+            .row.g-4 {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+            .row.g-4 > [class*="col-"] {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            .product-img-container {
+                height: 140px; 
+                padding: 10px;
+            }
+            .product-details {
+                padding: 12px; 
+            }
+            .product-title {
+                font-size: 14px; 
+                margin-bottom: 5px;
+            }
+            .product-details p.small {
+                font-size: 11px;
+                margin-bottom: 8px !important;
+            }
+            .product-meta {
+                font-size: 11px;
+                margin-bottom: 10px;
+                padding-top: 5px;
+            }
+            .meta-row {
+                display: block; 
+                margin-bottom: 4px;
+            }
+            .meta-row span {
+                display: block;
+                margin-bottom: 2px;
+            }
+            .btn-cart-style, .btn-outline-style {
+                padding: 6px;
+                font-size: 12px;
+            }
+            .product-badge {
+                font-size: 10px;
+                padding: 2px 6px;
+                top: 8px;
+                left: 8px;
+            }
+
+            .table th, .table td {
+                font-size: 12px;
+                padding: 8px 4px; 
+            }
+            .table .btn-sm {
+                padding: 0.2rem 0.4rem;
+                font-size: 10px;
+            }
+            .bg-light.p-5 {
+                padding: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -182,8 +249,8 @@
             <div class="col-lg-4 text-center text-lg-start">
                 <a href="index.html">
                     <img src="img/LOGO/ruvon-logo.png" alt="Ruvon International" style="max-height: 55px; width: auto; object-fit: contain;">
-                    </a>
-                </div>
+                </a>
+            </div>
             <div class="col-lg-8 d-none d-lg-block">
                 <div class="row">
                     <div class="col-lg-4">
@@ -243,9 +310,8 @@
                                 <a href="Our-Values.html" class="dropdown-item">Our Values</a>
                                 <a href="Leadership-Team.html" class="dropdown-item">Leadership Team</a>
                                 <a href="Certifications-Compliance.html" class="dropdown-item">Certifications & Compliance</a>
-                                   <a href="Global-Network.html" class="dropdown-item">Global Network</a>
-                                   <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
-                                   
+                                <a href="Global-Network.html" class="dropdown-item">Global Network</a>
+                                <a href="Why-Ruvon.html" class="dropdown-item">Why Ruvon</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
@@ -287,7 +353,7 @@
                     </div>
                     <div class="d-none d-lg-flex ms-auto">
                         <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                         <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -339,7 +405,7 @@
                     <p class="text-muted">Premium Castor Derivatives & Surfactants.</p>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-card">
                         <div class="product-badge">Global Hub</div>
                         <div class="product-img-container">
@@ -364,7 +430,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="product-card">
                         <div class="product-badge">Top Seller</div>
                         <div class="product-img-container">
@@ -389,7 +455,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="product-card">
                         <div class="product-badge">CP Grade</div>
                         <div class="product-img-container">
@@ -414,7 +480,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="product-card">
                         <div class="product-badge">High Margin</div>
                         <div class="product-img-container">
@@ -439,7 +505,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/505-LABSA-90%.webp" alt="LABSA 90%" onerror="this.src='img/product-5.jpg'">
@@ -463,7 +529,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/506-hydrogenated-castor-oil.webp" alt="Hydrogenated Castor Oil" onerror="this.src='img/product-6.jpg'">
@@ -487,7 +553,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/507-soap-noodles.webp" alt="Soap Noodles" onerror="this.src='img/product-7.jpg'">
@@ -511,7 +577,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/508-Stearic-Acid.jpg" alt="Stearic Acid" onerror="this.src='img/product-8.jpg'">
@@ -535,7 +601,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.9s">
                     <div class="product-card">
                         <div class="product-badge">Foam Booster</div>
                         <div class="product-img-container">
@@ -560,7 +626,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.0s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="1.0s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/510-CAPB.webp" alt="CAPB" onerror="this.src='img/product-10.jpg'">
@@ -584,7 +650,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="1.1s">
                     <div class="product-card">
                         <div class="product-img-container">
                             <img src="img/PRODUCTS/Oleochemicals-Castor-Oil/511-sls-powder.webp" alt="SLS Powder" onerror="this.src='img/product-11.jpg'">
@@ -608,7 +674,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                <div class="col-6 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="1.2s">
                     <div class="product-card">
                         <div class="product-badge">Specialty</div>
                         <div class="product-img-container">
@@ -637,10 +703,10 @@
 
             <div class="row mt-5">
                 <div class="col-12">
-                    <div class="bg-light rounded p-5 border">
+                    <div class="bg-light rounded p-3 p-md-5 border">
                         <h3 class="mb-4" style="color: #20685a;">Full Inventory: Oleochemicals & Castor</h3>
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover bg-white">
+                            <table class="table table-striped table-hover bg-white m-0">
                                 <thead class="text-white" style="background-color: #20685a;">
                                     <tr>
                                         <th scope="col" class="py-3">Product Name</th>
@@ -685,6 +751,7 @@
 
         </div>
     </div>
+
     <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <div class="row justify-content-center">
@@ -774,7 +841,7 @@
             </div>
         </div>
     </div>
-    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    
     <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     <div class="chat-btn" onclick="toggleChat()">
         <i class="fa fa-comments fa-2x"></i>
@@ -785,9 +852,7 @@
                 <img src="img/LOGO/ruvon-logo.png" alt="Bot"
                     style="height: 30px; border-radius: 5px; padding: 2px; margin-right: 10px;">
                 <div>
-                    <!-- <h5>Ruvon Assistant</h5>
-                    <small style="font-size: 10px; opacity: 0.8;">Online | Replies Instantly</small> -->
-                </div>
+                    </div>
             </div>
             <i class="fa fa-times" style="cursor: pointer;" onclick="toggleChat()"></i>
         </div>
@@ -799,7 +864,6 @@
             <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
